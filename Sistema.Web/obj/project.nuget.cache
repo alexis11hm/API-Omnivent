@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4Yw7/myOT0uwWd3LT+pvpzRVYLxYt4zJ3ojUTbwsJ6T9D19JksBuOzjbw6hNz4XsJ+IgnxQsT24jlXDJ4uywYw==",
+  "dgSpecHash": "WTRSFEZX9ySUHK+29W1SvgVLGuH9nNsTIJsdF9S6xd+dTFrlk9kGaBqmUcLiskqRPVACoExjpIK/2lFNgqU6IQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\refactor del sistema\\sistema\\Sistema.Web\\Sistema.Web.csproj",
+  "projectFilePath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\refactor del sistema\\OWS\\Sistema.Web\\Sistema.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\erikg\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "C:\\Users\\erikg\\.nuget\\packages\\microsoft.aspnetcore\\2.1.1\\microsoft.aspnetcore.2.1.1.nupkg.sha512",

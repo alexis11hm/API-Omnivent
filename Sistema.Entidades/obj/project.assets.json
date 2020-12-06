@@ -692,11 +692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\erikg\\Desktop\\OmniSoft\\refactor del sistema\\sistema\\Sistema.Entidades\\Sistema.Entidades.csproj",
+      "projectUniqueName": "C:\\Users\\erikg\\Desktop\\OmniSoft\\refactor del sistema\\OWS\\Sistema.Entidades\\Sistema.Entidades.csproj",
       "projectName": "Sistema.Entidades",
-      "projectPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\refactor del sistema\\sistema\\Sistema.Entidades\\Sistema.Entidades.csproj",
+      "projectPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\refactor del sistema\\OWS\\Sistema.Entidades\\Sistema.Entidades.csproj",
       "packagesPath": "C:\\Users\\erikg\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\refactor del sistema\\sistema\\Sistema.Entidades\\obj\\",
+      "outputPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\refactor del sistema\\OWS\\Sistema.Entidades\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\erikg\\AppData\\Roaming\\NuGet\\NuGet.Config",

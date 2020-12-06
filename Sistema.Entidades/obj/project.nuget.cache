@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Vw3XP7ENnXuc+fZWJvTw+mU3ZUuGI3i/V/tG7vSkG7v5BGLgqhTpPaYe1/v0Gs398t6PdHcmOSKqQov+6j/5CQ==",
+  "dgSpecHash": "PCVjhqp+HeViUz3/tGuQVQd2Yt1z3C3qWMscrZLNZ0qDJyhqpZjAmM/N+h9JSAgYXJEnUyBwHZe7uZHmESnUVw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\refactor del sistema\\sistema\\Sistema.Entidades\\Sistema.Entidades.csproj",
+  "projectFilePath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\refactor del sistema\\OWS\\Sistema.Entidades\\Sistema.Entidades.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\erikg\\.nuget\\packages\\microsoft.netcore.app\\2.1.0\\microsoft.netcore.app.2.1.0.nupkg.sha512",
     "C:\\Users\\erikg\\.nuget\\packages\\microsoft.netcore.dotnetapphost\\2.1.0\\microsoft.netcore.dotnetapphost.2.1.0.nupkg.sha512",

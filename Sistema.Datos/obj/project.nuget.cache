@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZPP9Ma2ZWY48Gj5i26EBa7w+ngJO0ADn9UYKra4qxuJBytsRdkkL4UtkmVIvXsA18N+G2LTQGnl+pJkSUC3z+w==",
+  "dgSpecHash": "H5qZdB+oku8cR6/lMu+2+Wzd9jxnTVKru2YvzaDp7lLBMyicjkBDKCL/RIxKXJ/QjvUPe54qGN4mLgMRUHMgnw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\refactor del sistema\\sistema\\Sistema.Datos\\Sistema.Datos.csproj",
+  "projectFilePath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\refactor del sistema\\OWS\\Sistema.Datos\\Sistema.Datos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\erikg\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\erikg\\.nuget\\packages\\microsoft.entityframeworkcore\\2.1.2\\microsoft.entityframeworkcore.2.1.2.nupkg.sha512",

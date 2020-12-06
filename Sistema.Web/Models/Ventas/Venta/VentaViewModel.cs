@@ -9,7 +9,7 @@ namespace Sistema.Web.Models.Ventas.Venta
     {
         public int VtaId { get; set; }
         public int VtaFolioVenta { get; set; }
-        public DateTime VtaFecha { get; set; }
+        public string VtaFecha { get; set; }
         public decimal VtaTotal { get; set; }
         public string VtaEstatus { get; set; }
         public short SucId { get; set; }

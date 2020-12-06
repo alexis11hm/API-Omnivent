@@ -12450,11 +12450,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\erikg\\Desktop\\OmniSoft\\refactor del sistema\\sistema\\Sistema.Web\\Sistema.Web.csproj",
+      "projectUniqueName": "C:\\Users\\erikg\\Desktop\\OmniSoft\\refactor del sistema\\OWS\\Sistema.Web\\Sistema.Web.csproj",
       "projectName": "Sistema.Web",
-      "projectPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\refactor del sistema\\sistema\\Sistema.Web\\Sistema.Web.csproj",
+      "projectPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\refactor del sistema\\OWS\\Sistema.Web\\Sistema.Web.csproj",
       "packagesPath": "C:\\Users\\erikg\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\refactor del sistema\\sistema\\Sistema.Web\\obj\\",
+      "outputPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\refactor del sistema\\OWS\\Sistema.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\erikg\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -12470,11 +12470,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\erikg\\Desktop\\OmniSoft\\refactor del sistema\\sistema\\Sistema.Datos\\Sistema.Datos.csproj": {
-              "projectPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\refactor del sistema\\sistema\\Sistema.Datos\\Sistema.Datos.csproj"
+            "C:\\Users\\erikg\\Desktop\\OmniSoft\\refactor del sistema\\OWS\\Sistema.Datos\\Sistema.Datos.csproj": {
+              "projectPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\refactor del sistema\\OWS\\Sistema.Datos\\Sistema.Datos.csproj"
             },
-            "C:\\Users\\erikg\\Desktop\\OmniSoft\\refactor del sistema\\sistema\\Sistema.Entidades\\Sistema.Entidades.csproj": {
-              "projectPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\refactor del sistema\\sistema\\Sistema.Entidades\\Sistema.Entidades.csproj"
+            "C:\\Users\\erikg\\Desktop\\OmniSoft\\refactor del sistema\\OWS\\Sistema.Entidades\\Sistema.Entidades.csproj": {
+              "projectPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\refactor del sistema\\OWS\\Sistema.Entidades\\Sistema.Entidades.csproj"
             }
           }
         }
