@@ -26,8 +26,8 @@ create table usuario(
 	idusuario integer primary key identity,
 	idrol integer not null,
 	usuario varchar(100) not null,
-	password_hash varbinary not null,
-	password_salt varbinary not null,
+	password_hash varbinary(MAX) not null,
+	password_salt varbinary(MAX) not null,
 	condicion bit default(1),
 	FOREIGN KEY (idrol) REFERENCES rol (idrol)
 );
