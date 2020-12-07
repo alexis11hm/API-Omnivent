@@ -12451,11 +12451,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS\\OWS\\Sistema.Web\\Sistema.Web.csproj",
       "projectName": "Sistema.Web",
       "projectPath": "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS\\OWS\\Sistema.Web\\Sistema.Web.csproj",
       "packagesPath": "C:\\Users\\alex_\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS\\OWS\\Sistema.Web\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Web\\Sistema.Web.csproj",
+      "projectName": "Sistema.Web",
+      "projectPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Web\\Sistema.Web.csproj",
+      "packagesPath": "C:\\Users\\erikg\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Web\\obj\\",
+>>>>>>> cc22a37fd08ecd1f9abddb0995b724d180095484
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12475,11 +12483,19 @@
         "netcoreapp2.1": {
           "targetAlias": "netcoreapp2.1",
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS\\OWS\\Sistema.Datos\\Sistema.Datos.csproj": {
               "projectPath": "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS\\OWS\\Sistema.Datos\\Sistema.Datos.csproj"
             },
             "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS\\OWS\\Sistema.Entidades\\Sistema.Entidades.csproj": {
               "projectPath": "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS\\OWS\\Sistema.Entidades\\Sistema.Entidades.csproj"
+=======
+            "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Datos\\Sistema.Datos.csproj": {
+              "projectPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Datos\\Sistema.Datos.csproj"
+            },
+            "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Entidades\\Sistema.Entidades.csproj": {
+              "projectPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Entidades\\Sistema.Entidades.csproj"
+>>>>>>> cc22a37fd08ecd1f9abddb0995b724d180095484
             }
           }
         }

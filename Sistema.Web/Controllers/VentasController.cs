@@ -32,7 +32,7 @@ namespace Sistema.Web.Controllers
             {
                 VtaId = v.VtaId,
                 VtaFolioVenta = v.VtaFolioVenta,
-                VtaFecha = v.VtaFecha,
+                VtaFecha = v.VtaFecha.ToString("dd/MM/yyyy"),
                 VtaTotal = v.VtaTotal,
                 VtaEstatus = v.VtaEstatus,
                 SucId = v.SucId,
@@ -57,7 +57,7 @@ namespace Sistema.Web.Controllers
             return Ok(new VentaViewModel {
                 VtaId = v.VtaId,
                 VtaFolioVenta = v.VtaFolioVenta,
-                VtaFecha = v.VtaFecha,
+                VtaFecha = v.VtaFecha.ToString("dd/MM/yyyy"),
                 VtaTotal = v.VtaTotal,
                 VtaEstatus = v.VtaEstatus,
                 SucId = v.SucId,

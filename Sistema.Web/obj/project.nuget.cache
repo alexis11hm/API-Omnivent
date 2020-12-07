@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "nk8gN1JmfpXFeIy2CeVeoicupx2i/GiR3wCTr05rDje8QgH0gobIdE0EIKvXGjSvmsfUX6tTdy8BegqbvgR13w==",
   "success": true,
   "projectFilePath": "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS\\OWS\\Sistema.Web\\Sistema.Web.csproj",
+=======
+  "dgSpecHash": "VLpgHrT4N3RNPAH4Y0PZLLqKh5RP6UzGUQaG0laKgc/JvsS+kw0hOfzc5IQVXSYaWKO6TV7q9W5VSzXlGA3nFQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Web\\Sistema.Web.csproj",
+>>>>>>> cc22a37fd08ecd1f9abddb0995b724d180095484
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore\\2.1.1\\microsoft.aspnetcore.2.1.1.nupkg.sha512",

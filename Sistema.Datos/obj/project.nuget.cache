@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "dzBBMd/4dhcn95m/LuTnk5d5GwC/3NG3k7upSRQIgfAz6GQfxwS4dFfxqbxKFOlDAjOTSpBIlVfhryu/+Njkxg==",
   "success": true,
   "projectFilePath": "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS\\OWS\\Sistema.Datos\\Sistema.Datos.csproj",
+=======
+  "dgSpecHash": "jshdAotXV/TlDd3d8kYIOPVHEGuxA4BFIV4ST7YjUUM2LwFBdZRAijgmTRLDvT8bvsVQypCcw2tDZP3g/KBVYg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Datos\\Sistema.Datos.csproj",
+>>>>>>> cc22a37fd08ecd1f9abddb0995b724d180095484
   "expectedPackageFiles": [
     "C:\\Users\\alex_\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\alex_\\.nuget\\packages\\microsoft.entityframeworkcore\\2.1.2\\microsoft.entityframeworkcore.2.1.2.nupkg.sha512",

@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS\\OWS\\Sistema.Datos\\Sistema.Datos.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS\\OWS\\Sistema.Datos\\Sistema.Datos.csproj",
         "packagesPath": "C:\\Users\\alex_\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS\\OWS\\Sistema.Datos\\obj\\",
+=======
+    "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Datos\\Sistema.Datos.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Datos\\Sistema.Datos.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Datos\\Sistema.Datos.csproj",
+        "projectName": "Sistema.Datos",
+        "projectPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Datos\\Sistema.Datos.csproj",
+        "packagesPath": "C:\\Users\\erikg\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Datos\\obj\\",
+>>>>>>> cc22a37fd08ecd1f9abddb0995b724d180095484
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -31,8 +45,13 @@
           "netcoreapp2.1": {
             "targetAlias": "netcoreapp2.1",
             "projectReferences": {
+<<<<<<< HEAD
               "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS\\OWS\\Sistema.Entidades\\Sistema.Entidades.csproj": {
                 "projectPath": "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS\\OWS\\Sistema.Entidades\\Sistema.Entidades.csproj"
+=======
+              "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Entidades\\Sistema.Entidades.csproj": {
+                "projectPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Entidades\\Sistema.Entidades.csproj"
+>>>>>>> cc22a37fd08ecd1f9abddb0995b724d180095484
               }
             }
           }
@@ -78,6 +97,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS\\OWS\\Sistema.Entidades\\Sistema.Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -86,6 +106,16 @@
         "projectPath": "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS\\OWS\\Sistema.Entidades\\Sistema.Entidades.csproj",
         "packagesPath": "C:\\Users\\alex_\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS\\OWS\\Sistema.Entidades\\obj\\",
+=======
+    "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Entidades\\Sistema.Entidades.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Entidades\\Sistema.Entidades.csproj",
+        "projectName": "Sistema.Entidades",
+        "projectPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Entidades\\Sistema.Entidades.csproj",
+        "packagesPath": "C:\\Users\\erikg\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Entidades\\obj\\",
+>>>>>>> cc22a37fd08ecd1f9abddb0995b724d180095484
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

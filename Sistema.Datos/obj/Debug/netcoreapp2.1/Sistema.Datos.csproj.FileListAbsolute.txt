@@ -41,6 +41,7 @@ C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\sistema\Sistema.Datos\obj\D
 C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\sistema\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.dll
 C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\sistema\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.pdb
 C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\sistema\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.genruntimeconfig.cache
+<<<<<<< HEAD
 C:\Users\alex_\OneDrive\Escritorio\Omnivent Flutter Apps\OWS\OWS\Sistema.Datos\bin\Debug\netcoreapp2.1\Sistema.Datos.deps.json
 C:\Users\alex_\OneDrive\Escritorio\Omnivent Flutter Apps\OWS\OWS\Sistema.Datos\bin\Debug\netcoreapp2.1\Sistema.Datos.runtimeconfig.json
 C:\Users\alex_\OneDrive\Escritorio\Omnivent Flutter Apps\OWS\OWS\Sistema.Datos\bin\Debug\netcoreapp2.1\Sistema.Datos.runtimeconfig.dev.json
@@ -56,3 +57,35 @@ C:\Users\alex_\OneDrive\Escritorio\Omnivent Flutter Apps\OWS\OWS\Sistema.Datos\o
 C:\Users\alex_\OneDrive\Escritorio\Omnivent Flutter Apps\OWS\OWS\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.dll
 C:\Users\alex_\OneDrive\Escritorio\Omnivent Flutter Apps\OWS\OWS\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.pdb
 C:\Users\alex_\OneDrive\Escritorio\Omnivent Flutter Apps\OWS\OWS\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.genruntimeconfig.cache
+=======
+C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\OWS\Sistema.Datos\bin\Debug\netcoreapp2.1\Sistema.Datos.deps.json
+C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\OWS\Sistema.Datos\bin\Debug\netcoreapp2.1\Sistema.Datos.runtimeconfig.json
+C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\OWS\Sistema.Datos\bin\Debug\netcoreapp2.1\Sistema.Datos.runtimeconfig.dev.json
+C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\OWS\Sistema.Datos\bin\Debug\netcoreapp2.1\Sistema.Datos.dll
+C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\OWS\Sistema.Datos\bin\Debug\netcoreapp2.1\Sistema.Datos.pdb
+C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\OWS\Sistema.Datos\bin\Debug\netcoreapp2.1\Sistema.Entidades.dll
+C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\OWS\Sistema.Datos\bin\Debug\netcoreapp2.1\Sistema.Entidades.pdb
+C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\OWS\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.csprojAssemblyReference.cache
+C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\OWS\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.AssemblyInfoInputs.cache
+C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\OWS\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.AssemblyInfo.cs
+C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\OWS\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.csproj.CoreCompileInputs.cache
+C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\OWS\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.csproj.CopyComplete
+C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\OWS\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.dll
+C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\OWS\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.pdb
+C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\OWS\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.genruntimeconfig.cache
+C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Datos\bin\Debug\netcoreapp2.1\Sistema.Datos.deps.json
+C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Datos\bin\Debug\netcoreapp2.1\Sistema.Datos.runtimeconfig.json
+C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Datos\bin\Debug\netcoreapp2.1\Sistema.Datos.runtimeconfig.dev.json
+C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Datos\bin\Debug\netcoreapp2.1\Sistema.Datos.dll
+C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Datos\bin\Debug\netcoreapp2.1\Sistema.Datos.pdb
+C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Datos\bin\Debug\netcoreapp2.1\Sistema.Entidades.dll
+C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Datos\bin\Debug\netcoreapp2.1\Sistema.Entidades.pdb
+C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.csprojAssemblyReference.cache
+C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.AssemblyInfoInputs.cache
+C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.AssemblyInfo.cs
+C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.csproj.CoreCompileInputs.cache
+C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.csproj.CopyComplete
+C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.dll
+C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.pdb
+C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.genruntimeconfig.cache
+>>>>>>> cc22a37fd08ecd1f9abddb0995b724d180095484

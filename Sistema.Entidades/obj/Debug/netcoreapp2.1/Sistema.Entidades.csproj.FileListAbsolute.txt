@@ -25,6 +25,7 @@ C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\sistema\Sistema.Entidades\o
 C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\sistema\Sistema.Entidades\obj\Debug\netcoreapp2.1\Sistema.Entidades.csproj.CoreCompileInputs.cache
 C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\sistema\Sistema.Entidades\obj\Debug\netcoreapp2.1\Sistema.Entidades.dll
 C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\sistema\Sistema.Entidades\obj\Debug\netcoreapp2.1\Sistema.Entidades.pdb
+<<<<<<< HEAD
 C:\Users\alex_\OneDrive\Escritorio\Omnivent Flutter Apps\OWS\OWS\Sistema.Entidades\bin\Debug\netcoreapp2.1\Sistema.Entidades.deps.json
 C:\Users\alex_\OneDrive\Escritorio\Omnivent Flutter Apps\OWS\OWS\Sistema.Entidades\bin\Debug\netcoreapp2.1\Sistema.Entidades.dll
 C:\Users\alex_\OneDrive\Escritorio\Omnivent Flutter Apps\OWS\OWS\Sistema.Entidades\bin\Debug\netcoreapp2.1\Sistema.Entidades.pdb
@@ -34,3 +35,23 @@ C:\Users\alex_\OneDrive\Escritorio\Omnivent Flutter Apps\OWS\OWS\Sistema.Entidad
 C:\Users\alex_\OneDrive\Escritorio\Omnivent Flutter Apps\OWS\OWS\Sistema.Entidades\obj\Debug\netcoreapp2.1\Sistema.Entidades.csproj.CoreCompileInputs.cache
 C:\Users\alex_\OneDrive\Escritorio\Omnivent Flutter Apps\OWS\OWS\Sistema.Entidades\obj\Debug\netcoreapp2.1\Sistema.Entidades.dll
 C:\Users\alex_\OneDrive\Escritorio\Omnivent Flutter Apps\OWS\OWS\Sistema.Entidades\obj\Debug\netcoreapp2.1\Sistema.Entidades.pdb
+=======
+C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\OWS\Sistema.Entidades\bin\Debug\netcoreapp2.1\Sistema.Entidades.deps.json
+C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\OWS\Sistema.Entidades\bin\Debug\netcoreapp2.1\Sistema.Entidades.dll
+C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\OWS\Sistema.Entidades\bin\Debug\netcoreapp2.1\Sistema.Entidades.pdb
+C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\OWS\Sistema.Entidades\obj\Debug\netcoreapp2.1\Sistema.Entidades.csprojAssemblyReference.cache
+C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\OWS\Sistema.Entidades\obj\Debug\netcoreapp2.1\Sistema.Entidades.AssemblyInfoInputs.cache
+C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\OWS\Sistema.Entidades\obj\Debug\netcoreapp2.1\Sistema.Entidades.AssemblyInfo.cs
+C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\OWS\Sistema.Entidades\obj\Debug\netcoreapp2.1\Sistema.Entidades.csproj.CoreCompileInputs.cache
+C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\OWS\Sistema.Entidades\obj\Debug\netcoreapp2.1\Sistema.Entidades.dll
+C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\OWS\Sistema.Entidades\obj\Debug\netcoreapp2.1\Sistema.Entidades.pdb
+C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Entidades\bin\Debug\netcoreapp2.1\Sistema.Entidades.deps.json
+C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Entidades\bin\Debug\netcoreapp2.1\Sistema.Entidades.dll
+C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Entidades\bin\Debug\netcoreapp2.1\Sistema.Entidades.pdb
+C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Entidades\obj\Debug\netcoreapp2.1\Sistema.Entidades.csprojAssemblyReference.cache
+C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Entidades\obj\Debug\netcoreapp2.1\Sistema.Entidades.AssemblyInfoInputs.cache
+C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Entidades\obj\Debug\netcoreapp2.1\Sistema.Entidades.AssemblyInfo.cs
+C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Entidades\obj\Debug\netcoreapp2.1\Sistema.Entidades.csproj.CoreCompileInputs.cache
+C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Entidades\obj\Debug\netcoreapp2.1\Sistema.Entidades.dll
+C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Entidades\obj\Debug\netcoreapp2.1\Sistema.Entidades.pdb
+>>>>>>> cc22a37fd08ecd1f9abddb0995b724d180095484
