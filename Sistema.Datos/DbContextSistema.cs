@@ -13,6 +13,7 @@ namespace Sistema.Datos
     {
         public DbSet<Venta> Ventas { get; set; }
         public DbSet<Rol> Roles { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
 
         public DbContextSistema(DbContextOptions<DbContextSistema> options) : base(options)
         {
@@ -24,6 +25,7 @@ namespace Sistema.Datos
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new VentaMap());
             modelBuilder.ApplyConfiguration(new RolMap());
+            modelBuilder.ApplyConfiguration(new UsuarioMap());
         }
 
     }
