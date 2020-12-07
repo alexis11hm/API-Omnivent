@@ -12,3 +12,22 @@ create table PDV_VENTA(
 	vnd_id int null,
 	lip_id int null	
 );
+
+--Tabla rol
+create table rol(
+	idrol integer primary key identity,
+	nombre varchar(30) not null,
+	descripcion varchar(100) null,
+	condicion bit default(1)
+);
+
+--Tabla usuario
+create table usuario(
+	idusuario integer primary key identity,
+	idrol integer not null,
+	usuario varchar(100) not null,
+	password_hash varbinary not null,
+	password_salt varbinary not null,
+	condicion bit default(1),
+	FOREIGN KEY (idrol) REFERENCES rol (idrol)
+);
