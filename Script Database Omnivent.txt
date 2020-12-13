@@ -13,21 +13,22 @@ create table PDV_VENTA(
 	lip_id int null	
 );
 
---Tabla rol
-create table rol(
+--Tabla GLB_PERFIL
+create GLB_PERFIL(
 	idrol integer primary key identity,
 	nombre varchar(30) not null,
 	descripcion varchar(100) null,
 	condicion bit default(1)
 );
 
---Tabla usuario
-create table usuario(
+--Tabla GLB_USUARIO
+create table GLB_USUARIO(
 	idusuario integer primary key identity,
 	idrol integer not null,
 	usuario varchar(100) not null,
 	password_hash varbinary(MAX) not null,
 	password_salt varbinary(MAX) not null,
 	condicion bit default(1),
-	FOREIGN KEY (idrol) REFERENCES rol (idrol)
+	FOREIGN KEY (idrol) REFERENCES GLB_PERFIL(idrol)
 );
+
