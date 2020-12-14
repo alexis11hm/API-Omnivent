@@ -14,7 +14,7 @@ create table PDV_VENTA(
 );
 
 --Tabla GLB_PERFIL
-create GLB_PERFIL(
+create table GLB_PERFIL(
 	idrol integer primary key identity,
 	nombre varchar(30) not null,
 	descripcion varchar(100) null,
