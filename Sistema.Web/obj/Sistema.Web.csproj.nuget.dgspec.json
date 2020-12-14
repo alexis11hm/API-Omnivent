@@ -2,6 +2,7 @@
   "format": 1,
   "restore": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS\\OWS\\Sistema.Web\\Sistema.Web.csproj": {}
   },
   "projects": {
@@ -15,6 +16,9 @@
         "outputPath": "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS\\OWS\\Sistema.Datos\\obj\\",
 =======
     "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Web\\Sistema.Web.csproj": {}
+=======
+    "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.web\\Sistema.Web.csproj": {}
+>>>>>>> 072ba75cf73bb6c809af94761e377187c36a25f8
   },
   "projects": {
     "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Datos\\Sistema.Datos.csproj": {
@@ -169,6 +173,7 @@
       }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
     "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS\\OWS\\Sistema.Web\\Sistema.Web.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -179,14 +184,21 @@
         "outputPath": "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS\\OWS\\Sistema.Web\\obj\\",
 =======
     "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Web\\Sistema.Web.csproj": {
+=======
+    "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.web\\Sistema.Web.csproj": {
+>>>>>>> 072ba75cf73bb6c809af94761e377187c36a25f8
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Web\\Sistema.Web.csproj",
+        "projectUniqueName": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.web\\Sistema.Web.csproj",
         "projectName": "Sistema.Web",
-        "projectPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Web\\Sistema.Web.csproj",
+        "projectPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.web\\Sistema.Web.csproj",
         "packagesPath": "C:\\Users\\erikg\\.nuget\\packages\\",
+<<<<<<< HEAD
         "outputPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Web\\obj\\",
 >>>>>>> cc22a37fd08ecd1f9abddb0995b724d180095484
+=======
+        "outputPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.web\\obj\\",
+>>>>>>> 072ba75cf73bb6c809af94761e377187c36a25f8
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

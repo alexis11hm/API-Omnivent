@@ -5,12 +5,14 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 using Sistema.Datos;
 using Sistema.Entidades.Usuarios;
 using Sistema.Web.Models.Usuarios.Rol;
 
 namespace Sistema.Web.Controllers
 {
+    [Authorize(Roles = "administrador")]
     [Route("api/[controller]")]
     [ApiController]
     public class RolesController : ControllerBase
