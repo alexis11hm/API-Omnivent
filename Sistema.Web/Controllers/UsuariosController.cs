@@ -32,7 +32,7 @@ namespace Sistema.Web.Controllers
         }
 
         // GET: api/Usuarios/Listar
-        [Authorize(Roles = "administrador")]
+        [Authorize(Roles = "super,administrador")]
         [HttpGet("[action]")]
         public async Task<IEnumerable<UsuarioViewModel>> Listar()
         {
@@ -51,7 +51,7 @@ namespace Sistema.Web.Controllers
         }
 
         // POST: api/Usuarios/Crear
-        [Authorize(Roles = "administrador")]
+        [Authorize(Roles = "super")]
         [HttpPost("[action]")]
         public async Task<IActionResult> Crear([FromBody] CrearViewModel model)
         {
@@ -85,7 +85,7 @@ namespace Sistema.Web.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest();
+                return BadRequest(ex);
             }
 
             return Ok();
@@ -93,7 +93,7 @@ namespace Sistema.Web.Controllers
 
 
         // PUT: api/Articulos/Actualizar
-        [Authorize(Roles = "administrador")]
+        [Authorize(Roles = "super,administrador")]
         [HttpPut("[action]")]
         public async Task<IActionResult> Actualizar([FromBody] ActualizarViewModel model)
         {
@@ -148,7 +148,7 @@ namespace Sistema.Web.Controllers
         }
 
         // PUT: api/Usuarios/Desactivar/1
-        [Authorize(Roles = "administrador")]
+        [Authorize(Roles = "super,administrador")]
         [HttpPut("[action]/{id}")]
         public async Task<IActionResult> Desactivar([FromRoute] int id)
         {
@@ -181,7 +181,7 @@ namespace Sistema.Web.Controllers
         }
 
         // PUT: api/Usuarios/Activar/1
-        [Authorize(Roles = "administrador")]
+        [Authorize(Roles = "super,administrador")]
         [HttpPut("[action]/{id}")]
         public async Task<IActionResult> Activar([FromRoute] int id)
         {

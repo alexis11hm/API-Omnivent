@@ -12,8 +12,8 @@ namespace Sistema.Web.Models.Ventas.Venta
         public DateTime VtaFecha { get; set; }
         public decimal VtaTotal { get; set; }
         public string VtaEstatus { get; set; }
-        public short SucId { get; set; }
-        public int? VndId { get; set; }
-        public int? LipId { get; set; }
+        public string Sucursal { get; set; }
+        public string Vendedor { get; set; }
+        public string ListaPrecios { get; set; }
     }
 }

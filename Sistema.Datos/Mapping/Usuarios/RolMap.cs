@@ -10,7 +10,7 @@ namespace Sistema.Datos.Mapping.Usuarios
     {
         public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Rol> builder)
         {
-            builder.ToTable("rol")
+            builder.ToTable("GLB_PERFIL")
                .HasKey(r => r.idrol);
         }
     }

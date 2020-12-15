@@ -18,9 +18,9 @@ namespace Sistema.Datos.Mapping.Ventas
             builder.Property(v => v.VtaFecha);
             builder.Property(v => v.VtaTotal);
             builder.Property(v => v.VtaEstatus);
-            builder.Property(v => v.SucId);
-            builder.Property(v => v.VndId);
-            builder.Property(v => v.LipId);
+            builder.Property(v => v.Sucursal);
+            builder.Property(v => v.Vendedor);
+            builder.Property(v => v.ListaPrecios);
         }
     }
 }

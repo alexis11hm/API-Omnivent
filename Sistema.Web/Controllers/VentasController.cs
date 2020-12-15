@@ -12,7 +12,7 @@ using Sistema.Web.Models.Ventas.Venta;
 
 namespace Sistema.Web.Controllers
 {
-    [Authorize(Roles = "administrador,consultor")]
+
     [Route("api/[controller]")]
     [ApiController]
     public class VentasController : ControllerBase
@@ -25,6 +25,7 @@ namespace Sistema.Web.Controllers
         }
 
         // GET: api/Ventas/Listar
+        [Authorize(Roles = "super,administrador,consultor")]
         [HttpGet("[action]")]
         public async Task <IEnumerable<VentaViewModel>> Listar()
         {
@@ -37,14 +38,15 @@ namespace Sistema.Web.Controllers
                 VtaFecha = v.VtaFecha.ToString("dd/MM/yyyy"),
                 VtaTotal = v.VtaTotal,
                 VtaEstatus = v.VtaEstatus,
-                SucId = v.SucId,
-                VndId = v.VndId,
-                LipId = v.LipId,
+                Sucursal = v.Sucursal,
+                Vendedor = v.Vendedor,
+                ListaPrecios = v.ListaPrecios,
             });
 
         }
 
         // GET: api/Ventas/Mostrar/1
+        [Authorize(Roles = "super,administrador,consultor")]
         [HttpGet("[action]/{id}")]
         public async Task<IActionResult> Mostrar([FromRoute] int id)
         {
@@ -62,13 +64,14 @@ namespace Sistema.Web.Controllers
                 VtaFecha = v.VtaFecha.ToString("dd/MM/yyyy"),
                 VtaTotal = v.VtaTotal,
                 VtaEstatus = v.VtaEstatus,
-                SucId = v.SucId,
-                VndId = v.VndId,
-                LipId = v.LipId,
+                Sucursal = v.Sucursal,
+                Vendedor = v.Vendedor,
+                ListaPrecios = v.ListaPrecios,
             });
         }
 
         // PUT: api/Ventas/Actualizar
+        [Authorize(Roles = "super")]
         [HttpPut("[action]")]
         public async Task<IActionResult> Actualizar([FromBody] ActualizarViewModel model)
         {
@@ -94,9 +97,9 @@ namespace Sistema.Web.Controllers
             v.VtaFecha = model.VtaFecha;
             v.VtaTotal = model.VtaTotal;
             v.VtaEstatus = model.VtaEstatus;
-            v.SucId = model.SucId;
-            v.VndId = (int)model.VndId;
-            v.LipId = (int)model.LipId;
+            v.Sucursal = model.Sucursal;
+            v.Vendedor = model.Vendedor;
+            v.ListaPrecios = model.ListaPrecios;
 
             try
             {
@@ -112,6 +115,7 @@ namespace Sistema.Web.Controllers
         }
 
         // POST: api/Ventas/Crear
+        [Authorize(Roles = "super")]
         [HttpPost("[action]")]
         public async Task<IActionResult> Crear([FromBody] CrearViewModel model)
         {
@@ -127,9 +131,9 @@ namespace Sistema.Web.Controllers
                 VtaFecha = model.VtaFecha,
                 VtaTotal = model.VtaTotal,
                 VtaEstatus = model.VtaEstatus,
-                SucId = model.SucId,
-                VndId = (int)model.VndId,
-                LipId = (int)model.LipId
+                Sucursal = model.Sucursal,
+                Vendedor = model.Vendedor,
+                ListaPrecios = model.ListaPrecios
             };
 
             _context.Ventas.Add(v);
@@ -139,13 +143,14 @@ namespace Sistema.Web.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest();
+                return BadRequest(ex);
             }
 
             return Ok();
         }
 
         // DELETE: api/Ventas/Eliminar/1
+        [Authorize(Roles = "super")]
         [HttpDelete("[action]/{id}")]
         public async Task<IActionResult> Eliminar([FromRoute] int id)
         {
@@ -167,7 +172,7 @@ namespace Sistema.Web.Controllers
             }
             catch(Exception ex)
             {
-                return BadRequest();
+                return BadRequest(ex);
             }           
 
             return Ok(venta);

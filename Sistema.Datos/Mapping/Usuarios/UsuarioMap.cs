@@ -11,7 +11,7 @@ namespace Sistema.Datos.Mapping.Usuarios
     {
         public void Configure(EntityTypeBuilder<Usuario> builder)
         {
-            builder.ToTable("usuario")
+            builder.ToTable("GLB_USUARIO")
                .HasKey(u => u.idusuario);
         }
     }

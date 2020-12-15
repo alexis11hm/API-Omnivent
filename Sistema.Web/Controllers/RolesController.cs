@@ -12,7 +12,7 @@ using Sistema.Web.Models.Usuarios.Rol;
 
 namespace Sistema.Web.Controllers
 {
-    [Authorize(Roles = "administrador")]
+
     [Route("api/[controller]")]
     [ApiController]
     public class RolesController : ControllerBase
@@ -25,6 +25,7 @@ namespace Sistema.Web.Controllers
         }
 
         // GET: api/Roles/Listar
+        [Authorize(Roles = "super,administrador")]
         [HttpGet("[action]")]
         public async Task<IEnumerable<RolViewModel>> Listar()
         {
@@ -41,6 +42,7 @@ namespace Sistema.Web.Controllers
         }
 
         // GET: api/Roles/Select
+        [Authorize(Roles = "super,administrador")]
         [HttpGet("[action]")]
         public async Task<IEnumerable<SelectViewModel>> Select()
         {

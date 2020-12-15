@@ -16,9 +16,9 @@ namespace Sistema.Web.Models.Ventas.Venta
         [Required]
         [StringLength(1)]
         public string VtaEstatus { get; set; }
-        public short SucId { get; set; }
-        public int? VndId { get; set; }
-        public int? LipId { get; set; }
+        public string Sucursal { get; set; }
+        public string Vendedor { get; set; }
+        public string ListaPrecios { get; set; }
 
     }
 }

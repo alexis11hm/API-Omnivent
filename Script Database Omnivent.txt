@@ -8,9 +8,9 @@ create table PDV_VENTA(
 	vta_fecha datetime not null,
 	vta_total money not null,
 	vta_estatus char(1) not null,
-	suc_id smallint not null,
-	vnd_id int null,
-	lip_id int null	
+	sucursal varchar(100) not null,
+	vendedor varchar(30) null,
+	lista_precios varchar(30) null	
 );
 
 --Tabla GLB_PERFIL
@@ -32,3 +32,14 @@ create table GLB_USUARIO(
 	FOREIGN KEY (idrol) REFERENCES GLB_PERFIL(idrol)
 );
 
+SET IDENTITY_INSERT [dbo].[GLB_PERFIL] ON
+INSERT INTO [dbo].[GLB_PERFIL] ([idrol], [nombre], [descripcion], [condicion]) VALUES (1, N'super', N'Acceso a toda la API', 1);
+INSERT INTO [dbo].[GLB_PERFIL] ([idrol], [nombre], [descripcion], [condicion]) VALUES (2, N'administrador', N'Todos los permisos', 1);
+INSERT INTO [dbo].[GLB_PERFIL] ([idrol], [nombre], [descripcion], [condicion]) VALUES (3, N'consultor', N'Permisos de Vista', 1);
+SET IDENTITY_INSERT [dbo].[GLB_PERFIL] OFF
+
+SET IDENTITY_INSERT [dbo].[PDV_VENTA] ON
+INSERT INTO [dbo].[PDV_VENTA] ([vta_id], [vta_folio_venta], [vta_fecha], [vta_total], [vta_estatus], [sucursal], [vendedor], [lista_precios]) VALUES (2, 1, N'1998-08-25 00:00:00', CAST(100.0000 AS Money), N'1', N'Plan de Ayala 18, Lázaro Cárdenas, 61516 Zitácuaro, Mich.', N'José Pablo Barraza', N'JUGUETES1');
+INSERT INTO [dbo].[PDV_VENTA] ([vta_id], [vta_folio_venta], [vta_fecha], [vta_total], [vta_estatus], [sucursal], [vendedor], [lista_precios]) VALUES (1003, 3, N'2010-10-23 00:00:00', CAST(500.0000 AS Money), N'0', N'Crisantemo Oriente 7, El Moral, 61514 Zitácuaro, Mich.', N'José Rodrigo Hernández', N'COMESTIBLES2');
+INSERT INTO [dbo].[PDV_VENTA] ([vta_id], [vta_folio_venta], [vta_fecha], [vta_total], [vta_estatus], [sucursal], [vendedor], [lista_precios]) VALUES (1004, 2, N'2020-03-30 00:00:00', CAST(316.0000 AS Money), N'1', N'Fco. Montes de Oca Sur, El Moral, 61514 Zitácuaro, Mich.', N'David Heredia', N'MISCELANEOS005');
+SET IDENTITY_INSERT [dbo].[PDV_VENTA] OFF

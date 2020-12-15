@@ -20,12 +20,12 @@ namespace Sistema.Entidades.Ventas
         [StringLength(1,ErrorMessage = "Solo debe haber un caracter")]
         [Column("vta_estatus")]
         public string VtaEstatus { get; set; }
-        [Column("suc_id")]
-        public short SucId { get; set; }
-        [Column("vnd_id")]
-        public int VndId { get; set; }
-        [Column("lip_id")]
-        public int LipId { get; set; }
+        [Column("sucursal")]
+        public string Sucursal { get; set; }
+        [Column("vendedor")]
+        public string Vendedor { get; set; }
+        [Column("lista_precios")]
+        public string ListaPrecios { get; set; }
 
     }
 }
