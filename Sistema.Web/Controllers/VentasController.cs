@@ -12,7 +12,7 @@ using Sistema.Web.Models.Ventas.Venta;
 
 namespace Sistema.Web.Controllers
 {
-
+    //Ruta para acceder a los métodos del controlador
     [Route("api/[controller]")]
     [ApiController]
     public class VentasController : ControllerBase

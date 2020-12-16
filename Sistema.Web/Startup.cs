@@ -31,14 +31,19 @@ namespace Sistema.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //Configuración del nombre de la cadena de conexión
             services.AddDbContext<DbContextSistema>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("Conexion")));
 
+            //La siguiente configuración permite que se puedan realizar meticiones a la API
             services.AddCors(options => {
                 options.AddPolicy("Todos",
                 builder => builder.WithOrigins("*").WithHeaders("*").WithMethods("*"));
             });
 
+            /*
+            Configuración de los valores que contendrá el jason web token y su encriptación
+            */
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {

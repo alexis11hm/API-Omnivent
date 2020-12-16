@@ -18,6 +18,7 @@ using Sistema.Web.Models.Usuarios.Usuario;
 
 namespace Sistema.Web.Controllers
 {
+    //Ruta para acceder a los métodos del controlador
     [Route("api/[controller]")]
     [ApiController]
     public class UsuariosController : ControllerBase
@@ -62,11 +63,13 @@ namespace Sistema.Web.Controllers
 
             var username = model.usuario;
 
+            //Verificar que no se creen dos usuarios con el mismo username
             if (await _context.Usuarios.AnyAsync(u => u.usuario == username))
             {
-                return BadRequest("El email ya existe");
+                return BadRequest("El usuario ya existe");
             }
 
+            //Encriptar contraseña
             CrearPasswordHash(model.password,out byte[] passwordHash,out byte[] passwordSalt);
 
             Usuario usuario = new Usuario
@@ -137,11 +140,18 @@ namespace Sistema.Web.Controllers
             return Ok();
         }
 
+        /*
+        Método para encriptar la contraseña del usuario
+        Recibe la contraseña como entrada y devuelve dos arrays de bits que contienen
+        la contraseña encriptada y la llave para desencriptarla
+        */
         private void CrearPasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
             using (var hmac = new System.Security.Cryptography.HMACSHA512())
             {
+                //Lave de encriptación
                 passwordSalt = hmac.Key;
+                //Contraseña encriptada
                 passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
             }
 
@@ -213,6 +223,7 @@ namespace Sistema.Web.Controllers
             return Ok();
         }
 
+        //URL que realiza la función de login -> api/Login
         [HttpPost("[action]")]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
@@ -230,6 +241,7 @@ namespace Sistema.Web.Controllers
                 return NotFound();
             }
 
+            //Valores que se ingresarán en el token de acceso
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, usuario.idusuario.ToString()),
@@ -246,11 +258,15 @@ namespace Sistema.Web.Controllers
 
         }
 
+        //Método para verificar si una contraseña es correcta
         private bool VerificarPasswordHash(string password, byte[] passwordHashAlmacenado, byte[] passwordSalt)
         {
+            //Se utiliza la llave conque fue encriptada la contraseña de la base de datos
             using (var hmac = new System.Security.Cryptography.HMACSHA512(passwordSalt))
             {
+                //Se encripta la contraseña intento utilizando la llave de la base de datos
                 var passwordHashNuevo = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+                //Las contraseñas son iguales si al encriptarse con la misma llave generan la misma secuencia de bits
                 return new ReadOnlySpan<byte>(passwordHashAlmacenado).SequenceEqual(new ReadOnlySpan<byte>(passwordHashNuevo));
             }
         }
@@ -263,6 +279,7 @@ namespace Sistema.Web.Controllers
             var token = new JwtSecurityToken(
               _config["Jwt:Issuer"],
               _config["Jwt:Issuer"],
+              //Se fijan los minutos que estará activo el token de acceso
               expires: DateTime.Now.AddMinutes(30),
               signingCredentials: creds,
               claims: claims);

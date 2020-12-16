@@ -13,6 +13,7 @@ using Sistema.Web.Models.Usuarios.Rol;
 namespace Sistema.Web.Controllers
 {
 
+    //Especificacion de la ruta para acceder a las peticiones del controlador
     [Route("api/[controller]")]
     [ApiController]
     public class RolesController : ControllerBase
