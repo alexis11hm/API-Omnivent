@@ -117,26 +117,31 @@ namespace Sistema.Web.Controllers
         // POST: api/Ventas/Crear
         [Authorize(Roles = "super")]
         [HttpPost("[action]")]
-        public async Task<IActionResult> Crear([FromBody] CrearViewModel model)
+        public async Task<IActionResult> Crear([FromBody] List<CrearViewModel> model)
         {
-            if (!ModelState.IsValid)
+            /*if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
-            }
+            }*/
 
-            Venta v = new Venta
-            {
-                VtaId = model.VtaId,
-                VtaFolioVenta = model.VtaFolioVenta,
-                VtaFecha = model.VtaFecha,
-                VtaTotal = model.VtaTotal,
-                VtaEstatus = model.VtaEstatus,
-                Sucursal = model.Sucursal,
-                Vendedor = model.Vendedor,
-                ListaPrecios = model.ListaPrecios
-            };
+            List<Venta> ventas = new List<Venta>();
 
-            _context.Ventas.Add(v);
+            model.ForEach(venta => {
+                Venta v = new Venta
+                {
+                    VtaId = venta.VtaId,
+                    VtaFolioVenta = venta.VtaFolioVenta,
+                    VtaFecha = venta.VtaFecha,
+                    VtaTotal = venta.VtaTotal,
+                    VtaEstatus = venta.VtaEstatus,
+                    Sucursal = venta.Sucursal,
+                    Vendedor = venta.Vendedor,
+                    ListaPrecios = venta.ListaPrecios
+                };
+                ventas.Add(v);
+            });
+
+            await _context.Ventas.AddRangeAsync(ventas);
             try
             {
                 await _context.SaveChangesAsync();
