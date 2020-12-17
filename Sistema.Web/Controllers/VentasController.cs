@@ -123,7 +123,8 @@ namespace Sistema.Web.Controllers
             {
                 return BadRequest(ModelState);
             }*/
-
+            
+            
             List<Venta> ventas = new List<Venta>();
 
             model.ForEach(venta => {
