@@ -3656,19 +3656,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\erikg\\.nuget\\packages\\": {}
+    "C:\\Users\\alex_\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Datos\\Sistema.Datos.csproj",
+      "projectUniqueName": "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS Old\\OWS\\Sistema.Datos\\Sistema.Datos.csproj",
       "projectName": "Sistema.Datos",
-      "projectPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Datos\\Sistema.Datos.csproj",
-      "packagesPath": "C:\\Users\\erikg\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Datos\\obj\\",
+      "projectPath": "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS Old\\OWS\\Sistema.Datos\\Sistema.Datos.csproj",
+      "packagesPath": "C:\\Users\\alex_\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS Old\\OWS\\Sistema.Datos\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\erikg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\alex_\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3680,9 +3684,10 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
           "projectReferences": {
-            "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Entidades\\Sistema.Entidades.csproj": {
-              "projectPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Entidades\\Sistema.Entidades.csproj"
+            "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS Old\\OWS\\Sistema.Entidades\\Sistema.Entidades.csproj": {
+              "projectPath": "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS Old\\OWS\\Sistema.Entidades\\Sistema.Entidades.csproj"
             }
           }
         }
@@ -3695,6 +3700,7 @@
     },
     "frameworks": {
       "netcoreapp2.1": {
+        "targetAlias": "netcoreapp2.1",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
@@ -3723,16 +3729,8 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema al leer el archivo de caché C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Datos\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
