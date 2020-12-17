@@ -3,7 +3,7 @@ create database omniventSample;
 use omniventSample;
 
 create table PDV_VENTA(
-	vta_id int not null identity primary key,
+	vta_id int not null primary key,
 	vta_folio_venta int not null,
 	vta_fecha datetime not null,
 	vta_total money not null,
