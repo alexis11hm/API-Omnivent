@@ -38,11 +38,9 @@ INSERT INTO [dbo].[GLB_PERFIL] ([idrol], [nombre], [descripcion], [condicion]) V
 INSERT INTO [dbo].[GLB_PERFIL] ([idrol], [nombre], [descripcion], [condicion]) VALUES (3, N'consultor', N'Permisos de Vista', 1);
 SET IDENTITY_INSERT [dbo].[GLB_PERFIL] OFF
 
-SET IDENTITY_INSERT [dbo].[PDV_VENTA] ON
 INSERT INTO [dbo].[PDV_VENTA] ([vta_id], [vta_folio_venta], [vta_fecha], [vta_total], [vta_estatus], [sucursal], [vendedor], [lista_precios]) VALUES (2, 1, N'1998-08-25 00:00:00', CAST(100.0000 AS Money), N'1', N'Plan de Ayala 18, Lázaro Cárdenas, 61516 Zitácuaro, Mich.', N'José Pablo Barraza', N'JUGUETES1');
 INSERT INTO [dbo].[PDV_VENTA] ([vta_id], [vta_folio_venta], [vta_fecha], [vta_total], [vta_estatus], [sucursal], [vendedor], [lista_precios]) VALUES (1003, 3, N'2010-10-23 00:00:00', CAST(500.0000 AS Money), N'0', N'Crisantemo Oriente 7, El Moral, 61514 Zitácuaro, Mich.', N'José Rodrigo Hernández', N'COMESTIBLES2');
 INSERT INTO [dbo].[PDV_VENTA] ([vta_id], [vta_folio_venta], [vta_fecha], [vta_total], [vta_estatus], [sucursal], [vendedor], [lista_precios]) VALUES (1004, 2, N'2020-03-30 00:00:00', CAST(316.0000 AS Money), N'1', N'Fco. Montes de Oca Sur, El Moral, 61514 Zitácuaro, Mich.', N'David Heredia', N'MISCELANEOS005');
-SET IDENTITY_INSERT [dbo].[PDV_VENTA] OFF
 
 SET IDENTITY_INSERT [dbo].[GLB_USUARIO] ON 
 INSERT [dbo].[GLB_USUARIO] ([idusuario], [idrol], [usuario], [password_hash], [password_salt], [condicion]) VALUES (3, 1, N'omni-user', 0x9738C8CE3311893E4854AE0939170FF78C31C5C836672CE8B2B6158E73EECFECAC7E7ECA359A6892E6134CF7E91CE569AF2B33FDAB45A7574A20E6D0D6048E14, 0x147BC5231DA4A726F6C2E98379A9FD139B1E339DFEED8D7F3C362325B642CF2B128ED6AA43FEFF8B470F789B74FB20A0FC0916A49B73013E6EBB750BB4E98E5A7BB1B1EABCD3CE821A7254D0AEE6AAB2328CF97C8D95F9B801493917935DA2E3B983A4B41D673647C06B15C7ED32393C01924DCEFE972E955C6043C2C617EF19, 1)
