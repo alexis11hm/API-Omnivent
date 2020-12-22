@@ -1,11 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Sistema.Datos.Mapping.Ventas;
 using Sistema.Datos.Mapping.Usuarios;
+using Sistema.Datos.Mapping.Almacen;
 using Sistema.Entidades.Ventas;
 using Sistema.Entidades.Usuarios;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Sistema.Entidades.Almacen;
 
 namespace Sistema.Datos
 {
@@ -14,6 +13,9 @@ namespace Sistema.Datos
         public DbSet<Venta> Ventas { get; set; }
         public DbSet<Rol> Roles { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Producto> Productos { get; set; }
+        public DbSet<ListaPrecio> ListaPrecios { get; set; }
+        public DbSet<ListaPrecioDetalle> ListaPrecioDetalles { get; set; }
 
         public DbContextSistema(DbContextOptions<DbContextSistema> options) : base(options)
         {
@@ -26,6 +28,9 @@ namespace Sistema.Datos
             modelBuilder.ApplyConfiguration(new VentaMap());
             modelBuilder.ApplyConfiguration(new RolMap());
             modelBuilder.ApplyConfiguration(new UsuarioMap());
+            modelBuilder.ApplyConfiguration(new ProductoMap());
+            modelBuilder.ApplyConfiguration(new ListaPrecioMap());
+            modelBuilder.ApplyConfiguration(new ListaPrecioDetalleMap());
         }
 
     }
