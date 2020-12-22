@@ -108,7 +108,6 @@ C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\OWS\Sistema.Web\obj\Debug\n
 C:\Users\erikg\Desktop\OmniSoft\refactor del sistema\OWS\Sistema.Web\obj\Debug\netcoreapp2.1\Sistema.Web.genruntimeconfig.cache
 C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Web\bin\Debug\netcoreapp2.1\appsettings.Development.json
 C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Web\bin\Debug\netcoreapp2.1\appsettings.json
-C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Web\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
 C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Web\bin\Debug\netcoreapp2.1\Sistema.Web.deps.json
 C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Web\bin\Debug\netcoreapp2.1\Sistema.Web.runtimeconfig.json
 C:\Users\erikg\Desktop\OmniSoft\OWS\Sistema.Web\bin\Debug\netcoreapp2.1\Sistema.Web.runtimeconfig.dev.json

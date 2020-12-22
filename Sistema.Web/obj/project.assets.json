@@ -12658,23 +12658,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\alex_\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\erikg\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS Old\\OWS\\Sistema.Web\\Sistema.Web.csproj",
+      "projectUniqueName": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Web\\Sistema.Web.csproj",
       "projectName": "Sistema.Web",
-      "projectPath": "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS Old\\OWS\\Sistema.Web\\Sistema.Web.csproj",
-      "packagesPath": "C:\\Users\\alex_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS Old\\OWS\\Sistema.Web\\obj\\",
+      "projectPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Web\\Sistema.Web.csproj",
+      "packagesPath": "C:\\Users\\erikg\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Web\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\alex_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\erikg\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12688,11 +12684,11 @@
         "netcoreapp2.1": {
           "targetAlias": "netcoreapp2.1",
           "projectReferences": {
-            "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS Old\\OWS\\Sistema.Datos\\Sistema.Datos.csproj": {
-              "projectPath": "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS Old\\OWS\\Sistema.Datos\\Sistema.Datos.csproj"
+            "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Datos\\Sistema.Datos.csproj": {
+              "projectPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Datos\\Sistema.Datos.csproj"
             },
-            "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS Old\\OWS\\Sistema.Entidades\\Sistema.Entidades.csproj": {
-              "projectPath": "C:\\Users\\alex_\\OneDrive\\Escritorio\\Omnivent Flutter Apps\\OWS Old\\OWS\\Sistema.Entidades\\Sistema.Entidades.csproj"
+            "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Entidades\\Sistema.Entidades.csproj": {
+              "projectPath": "C:\\Users\\erikg\\Desktop\\OmniSoft\\OWS\\Sistema.Entidades\\Sistema.Entidades.csproj"
             }
           }
         }
