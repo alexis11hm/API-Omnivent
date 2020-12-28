@@ -1,0 +1,1 @@
+select pro_descripcion,familia.fam_descripcion,subfamilia.sub_descripcion from GLB_PRODUCTO as producto join GLB_FAMILIA familia on producto.fam_id = familia.fam_id join GLB_SUBFAMILIA subfamilia on producto.fam_id = subfamilia.fam_id;
