@@ -4,6 +4,9 @@ namespace Sistema.Entidades.Almacen
 {
     public class ListaPrecioDetalle
     {
+
+        [Column("num_lipd")]
+        public int NumLip { get; set; }
         [Column("lip_id")]
         public int LipId { get; set; }
         [Column("pro_id")]

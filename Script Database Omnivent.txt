@@ -34,16 +34,14 @@ CREATE TABLE PDV_LISTA_PRECIO(
 );
 
 CREATE TABLE [dbo].[PDV_LISTAP_DETALLE](
+	[num_lipd] [int] NOT NULL IDENTITY primary key,
 	[lip_id] [int] NOT NULL,
 	[pro_id] [int] NOT NULL,
 	[lpd_precio_sin_iva] [money] NOT NULL,
 	[lpd_precio_con_iva] [money] NOT NULL,
- CONSTRAINT [PK_LISDET] PRIMARY KEY CLUSTERED 
-(
-	[lip_id] ASC,
-	[pro_id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY];
+	FOREIGN KEY (lip_id) REFERENCES PDV_LISTA_PRECIO(lip_id),
+	FOREIGN KEY (pro_id) REFERENCES GLB_PRODUCTO(pro_id)
+);
 
 --Tabla GLB_PERFIL
 create table GLB_PERFIL(
