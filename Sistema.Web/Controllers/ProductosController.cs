@@ -24,9 +24,9 @@ namespace Sistema.Web.Controllers
         }
 
         // GET: api/Productos/Listar
-        //[Authorize(Roles = "super,administrador,consultor")]
+        [Authorize(Roles = "super,administrador,consultor")]
         [HttpGet("[action]")]
-        public async Task <IEnumerable<ProductoViewModel>> Listar()
+        public async Task<IEnumerable<ProductoViewModel>> Listar()
         {
             var producto = await _context.Productos.ToListAsync();
 
@@ -57,7 +57,8 @@ namespace Sistema.Web.Controllers
                 return NotFound();
             }
 
-            return Ok(new SelectViewModel {
+            return Ok(new SelectViewModel
+            {
                 ProId = p.ProId,
                 ProDescripcion = p.ProDescripcion,
                 ProCodigoBarras = p.ProCodigoBarras,
@@ -91,7 +92,7 @@ namespace Sistema.Web.Controllers
                 return NotFound();
             }
 
-            p.ProId = p.ProId;
+            p.ProId = model.ProId;
             p.ProDescripcion = model.ProDescripcion;
             p.ProCodigoBarras = model.ProCodigoBarras;
             p.ProIdentificacion = model.ProIdentificacion;
@@ -114,7 +115,7 @@ namespace Sistema.Web.Controllers
         }
 
         // POST: api/Productos/Crear
-        //[Authorize(Roles = "super")]
+        [Authorize(Roles = "super")]
         [HttpPost("[action]")]
         public async Task<IActionResult> Crear([FromBody] List<CrearViewModel> model)
         {
@@ -124,7 +125,8 @@ namespace Sistema.Web.Controllers
             }*/
             List<Producto> productos = new List<Producto>();
 
-            model.ForEach(producto => {
+            model.ForEach(producto =>
+            {
                 Producto p = new Producto
                 {
                     ProId = producto.ProId,
@@ -173,10 +175,10 @@ namespace Sistema.Web.Controllers
             {
                 await _context.SaveChangesAsync();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest(ex);
-            }           
+            }
 
             return Ok(producto);
         }
