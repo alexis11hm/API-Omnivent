@@ -8,7 +8,7 @@ namespace Sistema.Datos.Mapping.Almacen
     {
         public void Configure(EntityTypeBuilder<ListaPrecioDetalle> builder)
         {
-            builder.ToTable("PDV_LISTAP_DETALLE");
+            builder.ToTable("PDV_LISTAP_DETALLE").HasKey(lpd => lpd.NumLip);
         }
     }
 }
