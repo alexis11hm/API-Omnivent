@@ -13,5 +13,6 @@ namespace Sistema.Entidades.Almacen
         [Column("lpd_precio_con_iva", TypeName = "money")]
         public decimal LipDetConIva { get; set; }
         public ListaPrecio listaPrecio { get; set; }
+        public Producto producto { get; set; }
     }
 }
