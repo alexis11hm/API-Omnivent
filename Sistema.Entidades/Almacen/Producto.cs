@@ -21,6 +21,5 @@ namespace Sistema.Entidades.Almacen
         public decimal ProPrecioGeneralIva { get; set; }
         [Column("pro_costo_general_iva", TypeName = "money")]
         public decimal ProCostoGeneralIva { get; set; }
-        public ICollection<ListaPrecioDetalle> precios { get; set; }
     }
 }
