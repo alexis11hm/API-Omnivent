@@ -13,10 +13,10 @@ namespace Sistema.Entidades.Almacen
         public string ProCodigoBarras { get; set; }
         [Column("pro_identificacion")]
         public string ProIdentificacion { get; set; }
-        [Column("fam_id")]
-        public int FamId { get; set; }
-        [Column("sub_id")]
-        public int SubId { get; set; }
+        [Column("fam_descripcion")]
+        public string Familia { get; set; }
+        [Column("sub_descripcion")]
+        public string SubFamilia { get; set; }
         [Column("pro_precio_general_iva", TypeName = "money")]
         public decimal ProPrecioGeneralIva { get; set; }
         [Column("pro_costo_general_iva", TypeName = "money")]
