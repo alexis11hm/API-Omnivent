@@ -22,8 +22,25 @@ namespace Sistema.Web.Controllers
             _context = context;
         }
 
+        // GET: api/Roles/ListarSuper
+        [Authorize(Roles = "super")]
+        [HttpGet("[action]")]
+        public async Task<IEnumerable<RolViewModel>> ListarSuper()
+        {
+            var rol = await _context.Roles.ToListAsync();
+
+            return rol.Select(r => new RolViewModel
+            {
+                idrol = r.idrol,
+                nombre = r.nombre,
+                descripcion = r.descripcion,
+                condicion = r.condicion
+            });
+
+        }
+
         // GET: api/Roles/Listar
-        [Authorize(Roles = "super,administrador")]
+        [Authorize(Roles = "administrador")]
         [HttpGet("[action]")]
         public async Task<IEnumerable<RolViewModel>> Listar()
         {
@@ -35,7 +52,7 @@ namespace Sistema.Web.Controllers
                 nombre = r.nombre,
                 descripcion = r.descripcion,
                 condicion = r.condicion
-            });
+            }).Where(r => r.idrol != 1);
 
         }
 

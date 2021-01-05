@@ -26,14 +26,33 @@ namespace Sistema.Web.Controllers
         private readonly DbContextSistema _context;
         private readonly IConfiguration _config;
 
-        public UsuariosController(DbContextSistema context,IConfiguration config)
+        public UsuariosController(DbContextSistema context, IConfiguration config)
         {
             _context = context;
             _config = config;
         }
 
+        // GET: api/Usuarios/ListarSuper
+        [Authorize(Roles = "super")]
+        [HttpGet("[action]")]
+        public async Task<IEnumerable<UsuarioViewModel>> ListarSuper()
+        {
+            var usuario = await _context.Usuarios.Include(u => u.rol).ToListAsync();
+
+            return usuario.Select(u => new UsuarioViewModel
+            {
+                idusuario = u.idusuario,
+                idrol = u.idrol,
+                rol = u.rol.nombre,
+                usuario = u.usuario,
+                password_hash = u.password_hash,
+                condicion = u.condicion
+            });
+
+        }
+
         // GET: api/Usuarios/Listar
-        [Authorize(Roles = "super,administrador")]
+        [Authorize(Roles = "administrador")]
         [HttpGet("[action]")]
         public async Task<IEnumerable<UsuarioViewModel>> Listar()
         {
@@ -47,7 +66,7 @@ namespace Sistema.Web.Controllers
                 usuario = u.usuario,
                 password_hash = u.password_hash,
                 condicion = u.condicion
-            });
+            }).Where(u => u.idrol != 1);
 
         }
 
@@ -70,12 +89,12 @@ namespace Sistema.Web.Controllers
             }
 
             //Encriptar contraseña
-            CrearPasswordHash(model.password,out byte[] passwordHash,out byte[] passwordSalt);
+            CrearPasswordHash(model.password, out byte[] passwordHash, out byte[] passwordSalt);
 
             Usuario usuario = new Usuario
             {
-                idrol=model.idrol,
-                usuario=model.usuario,
+                idrol = model.idrol,
+                usuario = model.usuario,
                 password_hash = passwordHash,
                 password_salt = passwordSalt,
                 condicion = true
@@ -229,14 +248,14 @@ namespace Sistema.Web.Controllers
         {
             var username = model.usuario;
 
-            var usuario = await _context.Usuarios.Where(u=>u.condicion==true).Include(u => u.rol).FirstOrDefaultAsync(u=>u.usuario==username);
+            var usuario = await _context.Usuarios.Where(u => u.condicion == true).Include(u => u.rol).FirstOrDefaultAsync(u => u.usuario == username);
 
             if (usuario == null)
             {
                 return NotFound();
             }
 
-            if (!VerificarPasswordHash(model.password,usuario.password_hash,usuario.password_salt))
+            if (!VerificarPasswordHash(model.password, usuario.password_hash, usuario.password_salt))
             {
                 return NotFound();
             }
@@ -253,7 +272,7 @@ namespace Sistema.Web.Controllers
             };
 
             return Ok(
-                    new {token = GenerarToken(claims)}
+                    new { token = GenerarToken(claims) }
                 );
 
         }
