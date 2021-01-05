@@ -61,27 +61,25 @@ namespace Sistema.Web.Controllers
         // PUT: api/ListaPrecios/Actualizar
         [Authorize(Roles = "super")]
         [HttpPut("[action]")]
-        public async Task<IActionResult> Actualizar([FromBody] ActualizarViewModel model)
+        public async Task<IActionResult> Actualizar([FromBody] List<ActualizarViewModel> model)
         {
-            if (!ModelState.IsValid)
+            foreach (ActualizarViewModel listaPrecios in model)
             {
-                return BadRequest(ModelState);
+                if (listaPrecios.LipId <= 0)
+                {
+                    return BadRequest();
+                }
+
+                var lp = await _context.ListaPrecios.FirstOrDefaultAsync(lip => lip.LipId == listaPrecios.LipId);
+
+                if (lp == null)
+                {
+                    return NotFound();
+                }
+
+                lp.LipId = listaPrecios.LipId;
+                lp.LipNombre = listaPrecios.LipNombre;
             }
-
-            if (model.LipId <= 0)
-            {
-                return BadRequest();
-            }
-
-            var lp = await _context.ListaPrecios.FirstOrDefaultAsync(lip => lip.LipId == model.LipId);
-
-            if (lp == null)
-            {
-                return NotFound();
-            }
-
-            lp.LipId = model.LipId;
-            lp.LipNombre = model.LipNombre;
 
             try
             {
@@ -101,10 +99,6 @@ namespace Sistema.Web.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> Crear([FromBody] List<CrearViewModel> model)
         {
-            /*if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }*/
             List<ListaPrecio> listasPrecios = new List<ListaPrecio>();
 
             model.ForEach(lista =>
@@ -130,23 +124,21 @@ namespace Sistema.Web.Controllers
             return Ok();
         }
 
-        // DELETE: api/ListaPrecios/Eliminar/1
+        // DELETE: api/ListaPrecios/Eliminar/
         [Authorize(Roles = "super")]
-        [HttpDelete("[action]/{id}")]
-        public async Task<IActionResult> Eliminar([FromRoute] int id)
+        [HttpDelete("[action]")]
+        public async Task<IActionResult> Eliminar([FromBody] int[] ids)
         {
-            if (!ModelState.IsValid)
+            foreach (int id in ids)
             {
-                return BadRequest(ModelState);
+                var listaPrecios = await _context.ListaPrecios.FindAsync(id);
+                if (listaPrecios == null)
+                {
+                    return NotFound();
+                }
+                _context.ListaPrecios.Remove(listaPrecios);
             }
 
-            var listaPrecios = await _context.ListaPrecios.FindAsync(id);
-            if (listaPrecios == null)
-            {
-                return NotFound();
-            }
-
-            _context.ListaPrecios.Remove(listaPrecios);
             try
             {
                 await _context.SaveChangesAsync();
@@ -156,7 +148,7 @@ namespace Sistema.Web.Controllers
                 return BadRequest(ex);
             }
 
-            return Ok(listaPrecios);
+            return Ok();
         }
 
         private bool ListaPreciosExists(int id)
