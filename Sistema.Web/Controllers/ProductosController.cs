@@ -24,7 +24,7 @@ namespace Sistema.Web.Controllers
         }
 
         // GET: api/Productos/Listar
-        //[Authorize(Roles = "super,administrador,consultor")]
+        [Authorize(Roles = "super,administrador,consultor")]
         [HttpGet("[action]")]
         public async Task<IEnumerable<ProductoViewModel>> Listar()
         {
@@ -45,7 +45,7 @@ namespace Sistema.Web.Controllers
         }
 
         // GET: api/Productos/Mostrar/1
-        //[Authorize(Roles = "super,administrador,consultor")]
+        [Authorize(Roles = "super,administrador,consultor")]
         [HttpGet("[action]/{id}")]
         public async Task<IActionResult> Mostrar([FromRoute] int id)
         {
@@ -71,7 +71,7 @@ namespace Sistema.Web.Controllers
         }
 
         // PUT: api/Productos/Actualizar
-        //[Authorize(Roles = "super")]
+        [Authorize(Roles = "super")]
         [HttpPut("[action]")]
         public async Task<IActionResult> Actualizar([FromBody] List<ActualizarViewModel> model)
         {
@@ -116,7 +116,7 @@ namespace Sistema.Web.Controllers
         }
 
         // POST: api/Productos/Crear
-        //[Authorize(Roles = "super")]
+        [Authorize(Roles = "super")]
         [HttpPost("[action]")]
         public async Task<IActionResult> Crear([FromBody] List<CrearViewModel> model)
         {
@@ -152,7 +152,7 @@ namespace Sistema.Web.Controllers
         }
 
         // DELETE: api/Productos/Eliminar/
-        //[Authorize(Roles = "super")]
+        [Authorize(Roles = "super")]
         [HttpDelete("[action]")]
         public async Task<IActionResult> Eliminar([FromBody] int[] ids)
         {
