@@ -74,46 +74,44 @@ namespace Sistema.Web.Controllers
         // PUT: api/ListaPrecioDetalles/Actualizar
         [Authorize(Roles = "super")]
         [HttpPut("[action]")]
-        public async Task<IActionResult> Actualizar([FromBody] ActualizarViewModel model)
+        public async Task<IActionResult> Actualizar([FromBody] List<ActualizarViewModel> model)
         {
-            if (!ModelState.IsValid)
+            foreach (ActualizarViewModel listaPrecioDetalles in model)
             {
-                return BadRequest(ModelState);
-            }
+                if (listaPrecioDetalles.NumLip <= 0)
+                {
+                    return BadRequest(listaPrecioDetalles);
+                }
+                if (listaPrecioDetalles.LipId <= 0)
+                {
+                    return BadRequest(listaPrecioDetalles);
+                }
+                if (listaPrecioDetalles.ProId <= 0)
+                {
+                    return BadRequest(listaPrecioDetalles);
+                }
 
-            if (model.NumLip <= 0)
-            {
-                return BadRequest();
-            }
-            if (model.LipId <= 0)
-            {
-                return BadRequest();
-            }
-            if (model.ProId <= 0)
-            {
-                return BadRequest();
-            }
+                var lpd = await _context.ListaPrecioDetalles.FirstOrDefaultAsync(lipd => lipd.NumLip == listaPrecioDetalles.NumLip);
 
-            var lpd = await _context.ListaPrecioDetalles.FirstOrDefaultAsync(lipd => lipd.NumLip == model.NumLip);
+                if (lpd == null)
+                {
+                    return NotFound(listaPrecioDetalles.NumLip);
+                }
 
-            if (lpd == null)
-            {
-                return NotFound();
+                lpd.LipId = listaPrecioDetalles.LipId;
+                lpd.ProId = listaPrecioDetalles.ProId;
+                lpd.LipDetSinIva = listaPrecioDetalles.LipDetSinIva;
+                lpd.LipDetConIva = listaPrecioDetalles.LipDetConIva;
             }
-
-            lpd.LipId = model.LipId;
-            lpd.ProId = model.ProId;
-            lpd.LipDetSinIva = model.LipDetSinIva;
-            lpd.LipDetConIva = model.LipDetConIva;
 
             try
             {
                 await _context.SaveChangesAsync();
             }
-            catch (DbUpdateConcurrencyException)
+            catch (DbUpdateConcurrencyException ex)
             {
                 // Guardar Excepción
-                return BadRequest();
+                return BadRequest(ex);
             }
 
             return Ok();
@@ -151,23 +149,21 @@ namespace Sistema.Web.Controllers
             return Ok();
         }
 
-        // DELETE: api/ListaPrecioDetalles/Eliminar/1
+        // DELETE: api/ListaPrecioDetalles/Eliminar
         [Authorize(Roles = "super")]
-        [HttpDelete("[action]/{id}")]
-        public async Task<IActionResult> Eliminar([FromRoute] int id)
+        [HttpDelete("[action]")]
+        public async Task<IActionResult> Eliminar([FromBody] int[] ids)
         {
-            if (!ModelState.IsValid)
+            foreach (int id in ids)
             {
-                return BadRequest(ModelState);
-            }
+                var listaPrecioDetalles = await _context.ListaPrecioDetalles.FindAsync(id);
+                if (listaPrecioDetalles == null)
+                {
+                    return NotFound(id);
+                }
 
-            var listaPrecioDetalles = await _context.ListaPrecioDetalles.FindAsync(id);
-            if (listaPrecioDetalles == null)
-            {
-                return NotFound();
+                _context.ListaPrecioDetalles.Remove(listaPrecioDetalles);
             }
-
-            _context.ListaPrecioDetalles.Remove(listaPrecioDetalles);
             try
             {
                 await _context.SaveChangesAsync();
@@ -177,7 +173,7 @@ namespace Sistema.Web.Controllers
                 return BadRequest(ex);
             }
 
-            return Ok(listaPrecioDetalles);
+            return Ok();
         }
 
         private bool ListaPrecioDetallesExists(int id)

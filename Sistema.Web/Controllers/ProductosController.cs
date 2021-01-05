@@ -73,42 +73,43 @@ namespace Sistema.Web.Controllers
         // PUT: api/Productos/Actualizar
         [Authorize(Roles = "super")]
         [HttpPut("[action]")]
-        public async Task<IActionResult> Actualizar([FromBody] ActualizarViewModel model)
+        public async Task<IActionResult> Actualizar([FromBody] List<ActualizarViewModel> model)
         {
-            if (!ModelState.IsValid)
+
+            foreach (ActualizarViewModel producto in model)
             {
-                return BadRequest(ModelState);
+
+                if (producto.ProId <= 0)
+                {
+                    return BadRequest(producto);
+                }
+
+                var p = await _context.Productos.FirstOrDefaultAsync(pro => pro.ProId == producto.ProId);
+
+                if (p == null)
+                {
+                    return NotFound(producto.ProId);
+                }
+
+                p.ProId = producto.ProId;
+                p.ProDescripcion = producto.ProDescripcion;
+                p.ProCodigoBarras = producto.ProCodigoBarras;
+                p.ProIdentificacion = producto.ProIdentificacion;
+                p.Familia = producto.Familia;
+                p.SubFamilia = producto.SubFamilia;
+                p.ProPrecioGeneralIva = producto.ProPrecioGeneralIva;
+                p.ProCostoGeneralIva = producto.ProCostoGeneralIva;
+
             }
-
-            if (model.ProId <= 0)
-            {
-                return BadRequest();
-            }
-
-            var p = await _context.Productos.FirstOrDefaultAsync(pro => pro.ProId == model.ProId);
-
-            if (p == null)
-            {
-                return NotFound();
-            }
-
-            p.ProId = model.ProId;
-            p.ProDescripcion = model.ProDescripcion;
-            p.ProCodigoBarras = model.ProCodigoBarras;
-            p.ProIdentificacion = model.ProIdentificacion;
-            p.Familia = model.Familia;
-            p.SubFamilia = model.SubFamilia;
-            p.ProPrecioGeneralIva = model.ProPrecioGeneralIva;
-            p.ProCostoGeneralIva = model.ProCostoGeneralIva;
 
             try
             {
                 await _context.SaveChangesAsync();
             }
-            catch (DbUpdateConcurrencyException)
+            catch (DbUpdateConcurrencyException ex)
             {
                 // Guardar Excepción
-                return BadRequest();
+                return BadRequest(ex);
             }
 
             return Ok();
@@ -119,10 +120,6 @@ namespace Sistema.Web.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> Crear([FromBody] List<CrearViewModel> model)
         {
-            /*if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }*/
             List<Producto> productos = new List<Producto>();
 
             model.ForEach(producto =>
@@ -154,23 +151,22 @@ namespace Sistema.Web.Controllers
             return Ok();
         }
 
-        // DELETE: api/Productos/Eliminar/1
+        // DELETE: api/Productos/Eliminar/
         [Authorize(Roles = "super")]
-        [HttpDelete("[action]/{id}")]
-        public async Task<IActionResult> Eliminar([FromRoute] int id)
+        [HttpDelete("[action]")]
+        public async Task<IActionResult> Eliminar([FromBody] int[] ids)
         {
-            if (!ModelState.IsValid)
+            foreach (int id in ids)
             {
-                return BadRequest(ModelState);
+                var producto = await _context.Productos.FindAsync(id);
+                if (producto == null)
+                {
+                    return NotFound(id);
+                }
+
+                _context.Productos.Remove(producto);
             }
 
-            var producto = await _context.Productos.FindAsync(id);
-            if (producto == null)
-            {
-                return NotFound();
-            }
-
-            _context.Productos.Remove(producto);
             try
             {
                 await _context.SaveChangesAsync();
@@ -179,8 +175,7 @@ namespace Sistema.Web.Controllers
             {
                 return BadRequest(ex);
             }
-
-            return Ok(producto);
+            return Ok();
         }
 
         private bool ProductoExists(int id)
