@@ -78,10 +78,10 @@ namespace Sistema.Web.Controllers
         {
             foreach (ActualizarViewModel listaPrecioDetalles in model)
             {
-                if (listaPrecioDetalles.NumLip <= 0)
+                /*if (listaPrecioDetalles.NumLip <= 0)
                 {
                     return BadRequest(listaPrecioDetalles);
-                }
+                }*/
                 if (listaPrecioDetalles.LipId <= 0)
                 {
                     return BadRequest(listaPrecioDetalles);
@@ -91,7 +91,9 @@ namespace Sistema.Web.Controllers
                     return BadRequest(listaPrecioDetalles);
                 }
 
-                var lpd = await _context.ListaPrecioDetalles.FirstOrDefaultAsync(lipd => lipd.NumLip == listaPrecioDetalles.NumLip);
+                var lpd = await _context.ListaPrecioDetalles.FirstOrDefaultAsync(
+                    lipd => lipd.LipId == listaPrecioDetalles.LipId
+                    && lipd.ProId == listaPrecioDetalles.ProId);
 
                 if (lpd == null)
                 {
@@ -152,18 +154,24 @@ namespace Sistema.Web.Controllers
         // DELETE: api/ListaPrecioDetalles/Eliminar
         [Authorize(Roles = "super")]
         [HttpDelete("[action]")]
-        public async Task<IActionResult> Eliminar([FromBody] int[] ids)
+        public async Task<IActionResult> Eliminar([FromBody] List<EliminarViewModel> model)
         {
-            foreach (int id in ids)
-            {
-                var listaPrecioDetalles = await _context.ListaPrecioDetalles.FindAsync(id);
+
+             foreach(EliminarViewModel eliminar in model){
+                
+                var listaPrecioDetalles = await _context.ListaPrecioDetalles.FirstOrDefaultAsync(
+                    lipd => lipd.LipId == eliminar.LipId
+                    && lipd.ProId == eliminar.ProId);
+
                 if (listaPrecioDetalles == null)
                 {
-                    return NotFound(id);
+                    return NotFound();
                 }
 
                 _context.ListaPrecioDetalles.Remove(listaPrecioDetalles);
-            }
+
+            };
+            
             try
             {
                 await _context.SaveChangesAsync();
