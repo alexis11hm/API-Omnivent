@@ -81,14 +81,14 @@ namespace Sistema.Web.Controllers
 
                 if (producto.ProId <= 0)
                 {
-                    return BadRequest();
+                    return BadRequest(producto);
                 }
 
                 var p = await _context.Productos.FirstOrDefaultAsync(pro => pro.ProId == producto.ProId);
 
                 if (p == null)
                 {
-                    return NotFound();
+                    return NotFound(producto.ProId);
                 }
 
                 p.ProId = producto.ProId;
@@ -106,10 +106,10 @@ namespace Sistema.Web.Controllers
             {
                 await _context.SaveChangesAsync();
             }
-            catch (DbUpdateConcurrencyException)
+            catch (DbUpdateConcurrencyException ex)
             {
                 // Guardar Excepción
-                return BadRequest();
+                return BadRequest(ex);
             }
 
             return Ok();
@@ -161,7 +161,7 @@ namespace Sistema.Web.Controllers
                 var producto = await _context.Productos.FindAsync(id);
                 if (producto == null)
                 {
-                    return NotFound();
+                    return NotFound(id);
                 }
 
                 _context.Productos.Remove(producto);

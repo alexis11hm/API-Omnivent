@@ -67,14 +67,14 @@ namespace Sistema.Web.Controllers
             {
                 if (listaPrecios.LipId <= 0)
                 {
-                    return BadRequest();
+                    return BadRequest(listaPrecios);
                 }
 
                 var lp = await _context.ListaPrecios.FirstOrDefaultAsync(lip => lip.LipId == listaPrecios.LipId);
 
                 if (lp == null)
                 {
-                    return NotFound();
+                    return NotFound(listaPrecios.LipId);
                 }
 
                 lp.LipId = listaPrecios.LipId;
@@ -85,10 +85,10 @@ namespace Sistema.Web.Controllers
             {
                 await _context.SaveChangesAsync();
             }
-            catch (DbUpdateConcurrencyException)
+            catch (DbUpdateConcurrencyException ex)
             {
                 // Guardar Excepción
-                return BadRequest();
+                return BadRequest(ex);
             }
 
             return Ok();
@@ -134,7 +134,7 @@ namespace Sistema.Web.Controllers
                 var listaPrecios = await _context.ListaPrecios.FindAsync(id);
                 if (listaPrecios == null)
                 {
-                    return NotFound();
+                    return NotFound(id);
                 }
                 _context.ListaPrecios.Remove(listaPrecios);
             }
