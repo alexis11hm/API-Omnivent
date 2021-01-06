@@ -50,24 +50,19 @@ namespace Sistema.Web.Controllers
         // GET: api/ListaPrecioDetalles/Mostrar/1
         [Authorize(Roles = "super,administrador,consultor")]
         [HttpGet("[action]/{id}")]
-        public async Task<IActionResult> Mostrar([FromRoute] int id)
+        public async Task<IEnumerable<ListaPrecioDetalleViewModel>> Mostrar([FromRoute] int id)
         {
 
-            var lpd = await _context.ListaPrecioDetalles.Include(lp => lp.listaPrecio).Include(p => p.producto).FirstOrDefaultAsync(lipd => lipd.ProId == id);
+            var lpd = await _context.ListaPrecioDetalles.Include(lp => lp.listaPrecio).Include(p => p.producto).Where(lipd => lipd.ProId == id).ToListAsync();
 
-            if (lpd == null)
+            return lpd.Select(lp => new ListaPrecioDetalleViewModel
             {
-                return NotFound();
-            }
-
-            return Ok(new ListaPrecioDetalleViewModel
-            {
-                LipId = lpd.LipId,
-                ProId = lpd.ProId,
-                LipDetSinIva = lpd.LipDetSinIva,
-                LipDetConIva = lpd.LipDetConIva,
-                listaPrecio = lpd.listaPrecio.LipNombre,
-                producto = lpd.producto.ProDescripcion
+                LipId = lp.LipId,
+                ProId = lp.ProId,
+                LipDetSinIva = lp.LipDetSinIva,
+                LipDetConIva = lp.LipDetConIva,
+                listaPrecio = lp.listaPrecio.LipNombre,
+                producto = lp.producto.ProDescripcion
             });
         }
 
