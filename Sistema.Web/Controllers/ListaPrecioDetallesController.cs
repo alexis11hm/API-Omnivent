@@ -47,13 +47,32 @@ namespace Sistema.Web.Controllers
 
         }
 
-        // GET: api/ListaPrecioDetalles/Mostrar/1
+        // GET: api/ListaPrecioDetalles/MostrarPorProducto/1
         [Authorize(Roles = "super,administrador,consultor")]
         [HttpGet("[action]/{id}")]
-        public async Task<IEnumerable<ListaPrecioDetalleViewModel>> Mostrar([FromRoute] int id)
+        public async Task<IEnumerable<ListaPrecioDetalleViewModel>> MostrarPorProducto([FromRoute] int id)
         {
 
             var lpd = await _context.ListaPrecioDetalles.Include(lp => lp.listaPrecio).Include(p => p.producto).Where(lipd => lipd.ProId == id).ToListAsync();
+
+            return lpd.Select(lp => new ListaPrecioDetalleViewModel
+            {
+                LipId = lp.LipId,
+                ProId = lp.ProId,
+                LipDetSinIva = lp.LipDetSinIva,
+                LipDetConIva = lp.LipDetConIva,
+                listaPrecio = lp.listaPrecio.LipNombre,
+                producto = lp.producto.ProDescripcion
+            });
+        }
+
+        // GET: api/ListaPrecioDetalles/MostrarPorListaPrecio/1
+        [Authorize(Roles = "super,administrador,consultor")]
+        [HttpGet("[action]/{id}")]
+        public async Task<IEnumerable<ListaPrecioDetalleViewModel>> MostrarPorListaPrecio([FromRoute] int id)
+        {
+
+            var lpd = await _context.ListaPrecioDetalles.Include(lp => lp.listaPrecio).Include(p => p.producto).Where(lipd => lipd.LipId == id).ToListAsync();
 
             return lpd.Select(lp => new ListaPrecioDetalleViewModel
             {
