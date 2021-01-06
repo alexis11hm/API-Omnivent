@@ -114,7 +114,7 @@ namespace Sistema.Web.Controllers
         }
 
 
-        // PUT: api/Articulos/Actualizar
+        // PUT: api/Usuarios/Actualizar
         [Authorize(Roles = "super,administrador")]
         [HttpPut("[action]")]
         public async Task<IActionResult> Actualizar([FromBody] ActualizarViewModel model)

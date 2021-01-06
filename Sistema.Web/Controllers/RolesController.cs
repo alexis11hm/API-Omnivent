@@ -56,12 +56,26 @@ namespace Sistema.Web.Controllers
 
         }
 
+        // GET: api/Roles/SelectSuper
+        [Authorize(Roles = "super")]
+        [HttpGet("[action]")]
+        public async Task<IEnumerable<SelectViewModel>> SelectSuper()
+        {
+            var rol = await _context.Roles.Where(r => r.condicion == true).ToListAsync();
+
+            return rol.Select(r => new SelectViewModel
+            {
+                idrol = r.idrol,
+                nombre = r.nombre
+            });
+        }
+
         // GET: api/Roles/Select
         [Authorize(Roles = "super,administrador")]
         [HttpGet("[action]")]
         public async Task<IEnumerable<SelectViewModel>> Select()
         {
-            var rol = await _context.Roles.Where(r => r.condicion == true).ToListAsync();
+            var rol = await _context.Roles.Where(r => r.condicion == true && r.idrol != 1).ToListAsync();
 
             return rol.Select(r => new SelectViewModel
             {
