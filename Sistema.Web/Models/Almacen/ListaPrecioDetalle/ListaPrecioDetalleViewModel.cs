@@ -9,6 +9,8 @@ namespace Sistema.Web.Models.Almacen.ListaPrecioDetalle
       public decimal LipDetSinIva { get; set; }
       public decimal LipDetConIva { get; set; }
       public string listaPrecio { get; set; }
-      public string producto { get; set; }
+      public int productoId { get; set; }
+      public string productoDescripcion { get; set; }
+      public string productoCodigoBarras { get; set; }
     }
 }

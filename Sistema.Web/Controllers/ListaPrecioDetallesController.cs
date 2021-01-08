@@ -42,7 +42,9 @@ namespace Sistema.Web.Controllers
                 LipDetSinIva = lp.LipDetSinIva,
                 LipDetConIva = lp.LipDetConIva,
                 listaPrecio = lp.listaPrecio.LipNombre,
-                producto = lp.producto.ProDescripcion
+                productoId = lp.producto.ProId,
+                productoDescripcion = lp.producto.ProDescripcion,
+                productoCodigoBarras = lp.producto.ProCodigoBarras
             });
 
         }
@@ -62,7 +64,9 @@ namespace Sistema.Web.Controllers
                 LipDetSinIva = lp.LipDetSinIva,
                 LipDetConIva = lp.LipDetConIva,
                 listaPrecio = lp.listaPrecio.LipNombre,
-                producto = lp.producto.ProDescripcion
+                productoId = lp.producto.ProId,
+                productoDescripcion = lp.producto.ProDescripcion,
+                productoCodigoBarras = lp.producto.ProCodigoBarras
             });
         }
 
@@ -81,7 +85,9 @@ namespace Sistema.Web.Controllers
                 LipDetSinIva = lp.LipDetSinIva,
                 LipDetConIva = lp.LipDetConIva,
                 listaPrecio = lp.listaPrecio.LipNombre,
-                producto = lp.producto.ProDescripcion
+                productoId = lp.producto.ProId,
+                productoDescripcion = lp.producto.ProDescripcion,
+                productoCodigoBarras = lp.producto.ProCodigoBarras
             });
         }
 
