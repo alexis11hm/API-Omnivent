@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Sistema.Web.Models.Ventas.Venta
+﻿namespace Sistema.Web.Models.Ventas.Venta
 {
     public class VentaViewModel
     {
