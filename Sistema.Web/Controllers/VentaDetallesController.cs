@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Sistema.Datos;
 using Sistema.Entidades.Ventas;
+using Sistema.Entidades.Almacen;
 using Sistema.Web.Models.Ventas.VentaDetalle;
 
 namespace Sistema.Web.Controllers
@@ -28,18 +29,19 @@ namespace Sistema.Web.Controllers
         [HttpGet("[action]")]
         public async Task<IEnumerable<VentaDetalleViewModel>> Listar()
         {
-            var ventasDetalles = await _context.VentaDetalles.Include(vta => vta.VtaId).Include(p => p.producto).ToListAsync();
+            var ventaDetalle = await _context.VentaDetalles.Include(vta => vta.venta).Include(p => p.producto).ToListAsync();
 
-            return ventasDetalles.Select(v => new VentaDetalleViewModel
+
+            return ventaDetalle.Select(vd => new VentaDetalleViewModel
             {
-                VedId = v.VedId,
-                VtaId = v.VtaId,
-                ProId = v.ProId,
-                VedPrecio = v.VedPrecio,
-                VedDescuento = v.VedDescuento,
-                VedCantidad = v.VedCantidad,
-                Venta = v.venta.VtaFolioVenta.ToString(),
-                Producto = v.producto.ProDescripcion
+                VedId = vd.VedId,
+                VtaId = vd.VtaId,
+                ProId = vd.ProId,
+                VedPrecio = vd.VedPrecio,
+                VedDescuento = vd.VedDescuento,
+                VedCantidad = vd.VedCantidad,
+                Producto = vd.producto.ProDescripcion,
+                Venta = vd.venta.VtaFolioVenta.ToString()
             });
         }
 
@@ -117,21 +119,26 @@ namespace Sistema.Web.Controllers
             return Ok();
         }
 
-        // DELETE: api/VentaDetalles/Eliminar/1
+        // DELETE: api/VentaDetalles/Eliminar
         [Authorize(Roles = "super")]
-        [HttpDelete("[action]/{id}")]
-        public async Task<IActionResult> Eliminar([FromRoute] int[] ids)
+        [HttpDelete("[action]")]
+        public async Task<IActionResult> Eliminar([FromBody] int[] ids)
         {
+
             foreach (int id in ids)
             {
-                var ventaDetalle = await _context.VentaDetalles.FindAsync(id);
-                if (ventaDetalle == null)
+
+                var ventaDetalles = await _context.VentaDetalles.FirstOrDefaultAsync(
+                    ved => ved.VedId == id);
+
+                if (ventaDetalles == null)
                 {
-                    return NotFound(id);
+                    return NotFound();
                 }
 
-                _context.VentaDetalles.Remove(ventaDetalle);
-            }
+                _context.VentaDetalles.Remove(ventaDetalles);
+
+            };
 
             try
             {
@@ -150,19 +157,18 @@ namespace Sistema.Web.Controllers
         [HttpGet("[action]/{id}")]
         public async Task<IEnumerable<VentaDetalleViewModel>> MostrarPorVenta([FromRoute] int id)
         {
+            var ventaDetalle = await _context.VentaDetalles.Include(vta => vta.venta).Include(p => p.producto).Where(ved => ved.VtaId == id).ToListAsync();
 
-            var ved = await _context.VentaDetalles.Include(vta => vta.VtaId).Include(p => p.producto).Where(vtaDet => vtaDet.VtaId == id).ToListAsync();
-
-            return ved.Select(vtaDet => new VentaDetalleViewModel
+            return ventaDetalle.Select(vd => new VentaDetalleViewModel
             {
-                VedId = vtaDet.VedId,
-                VtaId = vtaDet.VtaId,
-                ProId = vtaDet.ProId,
-                VedPrecio = vtaDet.VedPrecio,
-                VedDescuento = vtaDet.VedDescuento,
-                VedCantidad = vtaDet.VedCantidad,
-                Venta = vtaDet.venta.VtaFolioVenta.ToString(),
-                Producto = vtaDet.producto.ProDescripcion
+                VedId = vd.VedId,
+                VtaId = vd.VtaId,
+                ProId = vd.ProId,
+                VedPrecio = vd.VedPrecio,
+                VedDescuento = vd.VedDescuento,
+                VedCantidad = vd.VedCantidad,
+                Producto = vd.producto.ProDescripcion,
+                Venta = vd.venta.VtaFolioVenta.ToString()
             });
         }
 
@@ -171,19 +177,18 @@ namespace Sistema.Web.Controllers
         [HttpGet("[action]/{id}")]
         public async Task<IEnumerable<VentaDetalleViewModel>> MostrarPorProducto([FromRoute] int id)
         {
+            var ventaDetalle = await _context.VentaDetalles.Include(vta => vta.venta).Include(p => p.producto).Where(ved => ved.ProId == id).ToListAsync();
 
-            var ved = await _context.VentaDetalles.Include(vta => vta.VtaId).Include(p => p.producto).Where(vtaDet => vtaDet.ProId == id).ToListAsync();
-
-            return ved.Select(vtaDet => new VentaDetalleViewModel
+            return ventaDetalle.Select(vd => new VentaDetalleViewModel
             {
-                VedId = vtaDet.VedId,
-                VtaId = vtaDet.VtaId,
-                ProId = vtaDet.ProId,
-                VedPrecio = vtaDet.VedPrecio,
-                VedDescuento = vtaDet.VedDescuento,
-                VedCantidad = vtaDet.VedCantidad,
-                Venta = vtaDet.venta.VtaFolioVenta.ToString(),
-                Producto = vtaDet.producto.ProDescripcion
+                VedId = vd.VedId,
+                VtaId = vd.VtaId,
+                ProId = vd.ProId,
+                VedPrecio = vd.VedPrecio,
+                VedDescuento = vd.VedDescuento,
+                VedCantidad = vd.VedCantidad,
+                Producto = vd.producto.ProDescripcion,
+                Venta = vd.venta.VtaFolioVenta.ToString()
             });
         }
     }

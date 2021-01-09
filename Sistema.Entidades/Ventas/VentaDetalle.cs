@@ -17,7 +17,7 @@ namespace Sistema.Entidades.Ventas
         [Column("ved_importe_descuento", TypeName = "money")]
         public decimal VedDescuento { get; set; }
         [Column("ved_cantidad")]
-        public float VedCantidad { get; set; }
+        public double VedCantidad { get; set; }
         public Venta venta { get; set; }
         public Producto producto { get; set; }
     }

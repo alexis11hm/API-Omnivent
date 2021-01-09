@@ -2,17 +2,6 @@ create database omniventSample;
 
 use omniventSample;
 
-create table PDV_VENTA(
-	vta_id int not null primary key,
-	vta_folio_venta int not null,
-	vta_fecha datetime not null,
-	vta_total money not null,
-	vta_estatus char(1) not null,
-	sucursal varchar(100) not null,
-	vendedor varchar(30) null,
-	lista_precios varchar(30) null	
-);
-
 -- Tabla GLB_PRODUCTO
 -- con join a la tabla PDV_LISTAP_DETALLE
 -- PDV_LISTA_PRECIO
@@ -40,6 +29,30 @@ CREATE TABLE [dbo].[PDV_LISTAP_DETALLE](
 	[lpd_precio_sin_iva] [money] NOT NULL,
 	[lpd_precio_con_iva] [money] NOT NULL,
 	FOREIGN KEY (lip_id) REFERENCES PDV_LISTA_PRECIO(lip_id),
+	FOREIGN KEY (pro_id) REFERENCES GLB_PRODUCTO(pro_id)
+);
+
+--Tabla de ventas
+create table PDV_VENTA(
+	vta_id int not null primary key,
+	vta_folio_venta int not null,
+	vta_fecha datetime not null,
+	vta_total money not null,
+	vta_estatus char(1) not null,
+	sucursal varchar(100) not null,
+	vendedor varchar(30) null,
+	lista_precios varchar(30) null
+);
+
+--Tabla de venta detalle
+create table PDV_VENTA_DETALLE(
+	ved_id int not null primary key,
+	vta_id int not null,
+	pro_id int not null,
+	ved_precio_con_iva money not null,
+	ved_importe_descuento money null,
+	ved_cantidad float not null,
+	FOREIGN KEY (vta_id) REFERENCES PDV_VENTA(vta_id),
 	FOREIGN KEY (pro_id) REFERENCES GLB_PRODUCTO(pro_id)
 );
 
