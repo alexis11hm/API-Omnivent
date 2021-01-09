@@ -44,6 +44,7 @@ create table PDV_VENTA(
 	lista_precios varchar(30) null
 );
 
+--Tabla de venta detalle
 CREATE TABLE [dbo].[PDV_VENTA_DETALLE](
 	[ved_id] [int] NOT NULL,
 	[vta_id] [int] NOT NULL,
@@ -58,6 +59,12 @@ CONSTRAINT [PK_VTADET] PRIMARY KEY CLUSTERED
 	[vta_id] ASC,
 	[ved_id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+);
+
+--Tabla de forma pago
+create table PDV_FORMA_PAGO(
+	fop_id int not null primary key,
+	fop_descripcion varchar(40) not null
 );
 
 --Tabla GLB_PERFIL

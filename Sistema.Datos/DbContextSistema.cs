@@ -12,6 +12,7 @@ namespace Sistema.Datos
     {
         public DbSet<Venta> Ventas { get; set; }
         public DbSet<VentaDetalle> VentaDetalles { get; set; }
+        public DbSet<FormaPago> FormasPago { get; set; }
         public DbSet<Rol> Roles { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Producto> Productos { get; set; }
@@ -20,7 +21,7 @@ namespace Sistema.Datos
 
         public DbContextSistema(DbContextOptions<DbContextSistema> options) : base(options)
         {
-            
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -28,6 +29,7 @@ namespace Sistema.Datos
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new VentaMap());
             modelBuilder.ApplyConfiguration(new VentaDetalleMap());
+            modelBuilder.ApplyConfiguration(new FormaPagoMap());
             modelBuilder.ApplyConfiguration(new RolMap());
             modelBuilder.ApplyConfiguration(new UsuarioMap());
             modelBuilder.ApplyConfiguration(new ProductoMap());
