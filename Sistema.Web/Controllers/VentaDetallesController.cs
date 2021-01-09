@@ -57,7 +57,7 @@ namespace Sistema.Web.Controllers
                     return BadRequest(ventaDetalle);
                 }
 
-                var v = await _context.VentaDetalles.FirstOrDefaultAsync(vta => vta.VedId == ventaDetalle.VedId);
+                var v = await _context.VentaDetalles.FirstOrDefaultAsync(vta => vta.VedId == ventaDetalle.VedId && vta.VtaId == ventaDetalle.VtaId);
 
                 if (v == null)
                 {
@@ -122,21 +122,21 @@ namespace Sistema.Web.Controllers
         // DELETE: api/VentaDetalles/Eliminar
         [Authorize(Roles = "super")]
         [HttpDelete("[action]")]
-        public async Task<IActionResult> Eliminar([FromBody] int[] ids)
+        public async Task<IActionResult> Eliminar([FromBody] List<EliminarViewModel> ventasEliminar)
         {
 
-            foreach (int id in ids)
+            foreach (EliminarViewModel ventaDetalle in ventasEliminar)
             {
 
-                var ventaDetalles = await _context.VentaDetalles.FirstOrDefaultAsync(
-                    ved => ved.VedId == id);
+                var venta = await _context.VentaDetalles.FirstOrDefaultAsync(
+                    ved => ved.VedId == ventaDetalle.VedId && ved.VtaId == ventaDetalle.VtaId);
 
-                if (ventaDetalles == null)
+                if (venta == null)
                 {
                     return NotFound();
                 }
 
-                _context.VentaDetalles.Remove(ventaDetalles);
+                _context.VentaDetalles.Remove(venta);
 
             };
 

@@ -9,7 +9,7 @@ namespace Sistema.Datos.Mapping.Ventas
         public void Configure(EntityTypeBuilder<VentaDetalle> builder)
         {
             builder.ToTable("PDV_VENTA_DETALLE")
-               .HasKey(v => v.VedId);
+            .HasKey(vta => new { vta.VedId, vta.VtaId });
         }
     }
 }
