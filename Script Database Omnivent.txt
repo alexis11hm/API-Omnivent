@@ -67,6 +67,21 @@ create table PDV_FORMA_PAGO(
 	fop_descripcion varchar(40) not null
 );
 
+--Tabla para flujo de efectivo
+CREATE TABLE [dbo].[PDV_FLUJO_EFECTIVO](
+	[fle_id] [int] NOT NULL PRIMARY KEY,
+	[fle_fecha] [datetime] NOT NULL,
+	[fle_importe] [money] NOT NULL,
+	[fop_id] [int] NOT NULL,
+	[fle_tipo] [char](1) NOT NULL,
+	[fle_referencia] [varchar](100) NULL,
+	[fle_observaciones] [text] NULL,
+	[caj_descripcion] [varchar](30) NOT NULL,
+	sucursal varchar(100) null,
+	[cac_id] [int] NULL,
+	FOREIGN KEY (fop_id) REFERENCES PDV_FORMA_PAGO(fop_id),
+);
+
 --Tabla GLB_PERFIL
 create table GLB_PERFIL(
 	idrol integer primary key identity,

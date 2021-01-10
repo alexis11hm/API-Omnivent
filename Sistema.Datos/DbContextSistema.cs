@@ -13,6 +13,7 @@ namespace Sistema.Datos
         public DbSet<Venta> Ventas { get; set; }
         public DbSet<VentaDetalle> VentaDetalles { get; set; }
         public DbSet<FormaPago> FormasPago { get; set; }
+        public DbSet<FlujoEfectivo> FlujosEfectivo { get; set; }
         public DbSet<Rol> Roles { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Producto> Productos { get; set; }
@@ -30,6 +31,7 @@ namespace Sistema.Datos
             modelBuilder.ApplyConfiguration(new VentaMap());
             modelBuilder.ApplyConfiguration(new VentaDetalleMap());
             modelBuilder.ApplyConfiguration(new FormaPagoMap());
+            modelBuilder.ApplyConfiguration(new FlujoEfectivoMap());
             modelBuilder.ApplyConfiguration(new RolMap());
             modelBuilder.ApplyConfiguration(new UsuarioMap());
             modelBuilder.ApplyConfiguration(new ProductoMap());

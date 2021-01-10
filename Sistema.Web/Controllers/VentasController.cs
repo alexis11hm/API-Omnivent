@@ -118,10 +118,6 @@ namespace Sistema.Web.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> Crear([FromBody] List<CrearViewModel> model)
         {
-            /*if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }*/
             List<Venta> ventas = new List<Venta>();
 
             model.ForEach(venta => {
