@@ -3,9 +3,6 @@ create database omniventSample;
 use omniventSample;
 
 -- Tabla GLB_PRODUCTO
--- con join a la tabla PDV_LISTAP_DETALLE
--- PDV_LISTA_PRECIO
-
 CREATE TABLE GLB_PRODUCTO(
 	[pro_id] [int] NOT NULL primary key,
 	[pro_descripcion] [varchar](60) NOT NULL,
@@ -17,11 +14,36 @@ CREATE TABLE GLB_PRODUCTO(
 	[pro_costo_general_iva] [money] NOT NULL
 );
 
+--Tabla de sucursal
+CREATE TABLE [dbo].[GLB_SUCURSAL](
+	[suc_id] [smallint] NOT NULL primary key,
+	[suc_nombre] [varchar](50) NOT NULL
+);
+
+--Tabla de almacen
+CREATE TABLE [dbo].[PDV_ALMACEN](
+	[alm_id] [int] NOT NULL primary key,
+	[alm_descripcion] [varchar](40) NOT NULL,
+	[alm_estatus] [char](1) NOT NULL,
+	[suc_id] [smallint] NOT NULL,
+	FOREIGN KEY (suc_id) REFERENCES GLB_SUCURSAL(suc_id),
+);
+
+--Tabla de almacen producto
+CREATE TABLE [dbo].[PDV_ALMACEN_PRODUCTO](
+	[alm_id] [int] NOT NULL primary key,
+	[pro_id] [int] NOT NULL,
+	[alp_stock_actual] [float] NOT NULL,
+	FOREIGN KEY (pro_id) REFERENCES GLB_PRODUCTO(pro_id)
+);
+
+--Tabla de lista de precios
 CREATE TABLE PDV_LISTA_PRECIO(
 	[lip_id] [int] not null primary key,
 	[lip_nombre] [varchar](30) NOT NULL
 );
 
+--Lista de precios detalle
 CREATE TABLE [dbo].[PDV_LISTAP_DETALLE](
 	[num_lipd] [int] NOT NULL IDENTITY primary key,
 	[lip_id] [int] NOT NULL,
