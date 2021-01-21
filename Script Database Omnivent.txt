@@ -31,10 +31,17 @@ CREATE TABLE [dbo].[PDV_ALMACEN](
 
 --Tabla de almacen producto
 CREATE TABLE [dbo].[PDV_ALMACEN_PRODUCTO](
-	[alm_id] [int] NOT NULL primary key,
+	[alm_id] [int] NOT NULL,
 	[pro_id] [int] NOT NULL,
 	[alp_stock_actual] [float] NOT NULL,
-	FOREIGN KEY (pro_id) REFERENCES GLB_PRODUCTO(pro_id)
+	FOREIGN KEY (alm_id) REFERENCES PDV_ALMACEN(alm_id),
+	FOREIGN KEY (pro_id) REFERENCES GLB_PRODUCTO(pro_id),
+CONSTRAINT [PK_ALMPRO] PRIMARY KEY CLUSTERED 
+(
+	[alm_id] ASC,
+	[pro_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+);
 );
 
 --Tabla de lista de precios
