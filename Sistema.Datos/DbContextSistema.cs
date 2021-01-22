@@ -10,6 +10,9 @@ namespace Sistema.Datos
 {
     public class DbContextSistema : DbContext
     {
+        public DbSet<Sucursal> Sucursales { get; set; }
+        public DbSet<Almacen> Almacenes { get; set; }
+        public DbSet<AlmacenProducto> AlmacenProductos { get; set; }
         public DbSet<Venta> Ventas { get; set; }
         public DbSet<VentaDetalle> VentaDetalles { get; set; }
         public DbSet<FormaPago> FormasPago { get; set; }
@@ -28,6 +31,9 @@ namespace Sistema.Datos
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new AlmacenProductoMap());
+            modelBuilder.ApplyConfiguration(new AlmacenMap());
+            modelBuilder.ApplyConfiguration(new SucursalMap());
             modelBuilder.ApplyConfiguration(new VentaMap());
             modelBuilder.ApplyConfiguration(new VentaDetalleMap());
             modelBuilder.ApplyConfiguration(new FormaPagoMap());
