@@ -9,7 +9,7 @@ namespace Sistema.Entidades.Almacen
         [Column("pro_id")]
         public int ProId { get; set; }
         [Column("alp_stock_actual")]
-        public float AlpStockActual { get; set; }
+        public double AlpStockActual { get; set; }
 
         public Almacen almacen { get; set; }
 

@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Sistema.Entidades.Almacen
@@ -11,7 +12,7 @@ namespace Sistema.Entidades.Almacen
         [Column("alm_estatus")]
         public char AlmEstatus { get; set; }
         [Column("suc_id")]
-        public int SucId { get; set; }
+        public Int16 SucId { get; set; }
 
         public Sucursal sucursal { get; set; }
     }

@@ -129,9 +129,9 @@ namespace Sistema.Web.Controllers
         // DELETE: api/Sucursales/Eliminar/
         [Authorize(Roles = "super")]
         [HttpDelete("[action]")]
-        public async Task<IActionResult> Eliminar([FromBody] int[] ids)
+        public async Task<IActionResult> Eliminar([FromBody] Int16[] ids)
         {
-            foreach (int id in ids)
+            foreach (Int16 id in ids)
             {
                 var sucursal = await _context.Sucursales.FindAsync(id);
                 if (sucursal == null)
