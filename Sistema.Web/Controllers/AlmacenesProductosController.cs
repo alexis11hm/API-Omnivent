@@ -142,6 +142,19 @@ namespace Sistema.Web.Controllers
             return Ok();
         }
 
+        // GET: api/AlmacenesProductos/MostrarExistenciasMultiAlmacen
+        //[Authorize(Roles = "super,administrador,consultor")]
+        [HttpGet("[action]")]
+        public async Task<IEnumerable<SelectViewModel>> MostrarExistenciasMultiAlmacen()
+        {
+            var existencias = await _context.Existencias.FromSql("ObtenerExistenciasAlmacenes").ToListAsync();
+            return existencias.Select(ex => new SelectViewModel{
+                ProId = ex.ProId,
+                ProDescripcion = ex.ProDescripcion,
+                ProIdentificacion = ex.ProIdentificacion
+            });
+        }
+
         // GET: api/AlmacenesProductos/MostrarPorVenta/1
         [Authorize(Roles = "super,administrador,consultor")]
         [HttpGet("[action]/{id}")]
