@@ -142,16 +142,21 @@ namespace Sistema.Web.Controllers
             return Ok();
         }
 
-        // GET: api/AlmacenesProductos/MostrarExistenciasMultiAlmacen
+        // GET: api/AlmacenesProductos/MostrarExistencias
         //[Authorize(Roles = "super,administrador,consultor")]
         [HttpGet("[action]")]
-        public async Task<IEnumerable<SelectViewModel>> MostrarExistenciasMultiAlmacen()
+        public async Task<IEnumerable<SelectViewModel>> MostrarExistencias()
         {
             var existencias = await _context.Existencias.FromSql("ObtenerExistenciasAlmacenes").ToListAsync();
-            return existencias.Select(ex => new SelectViewModel{
-                ProId = ex.ProId,
-                ProDescripcion = ex.ProDescripcion,
-                ProIdentificacion = ex.ProIdentificacion
+
+            return existencias.Select(ext => new SelectViewModel
+            {
+                ProId = ext.ProId,
+                ProDescripcion = ext.ProDescripcion,
+                ProIdentificacion = ext.ProIdentificacion,
+                AlmacenAguascalientes = ext.AlmacenAguascalientes,
+                AlmacenGeneral = ext.AlmacenGeneral,
+                SucNombre = ext.SucNombre
             });
         }
 
