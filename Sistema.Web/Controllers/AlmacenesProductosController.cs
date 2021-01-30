@@ -41,6 +41,38 @@ namespace Sistema.Web.Controllers
             });
         }
 
+        // GET: api/AlmacenesProductos/Existencias
+        //[Authorize(Roles = "super,administrador,consultor")]
+        [HttpGet("[action]")]
+        public async Task<IEnumerable<ExistenciasPorAlmacenPorProductoViewModel>> Existencias()
+        {
+            var almacenProducto = await _context.AlmacenProductos.Include(alm => alm.almacen).Include(p => p.producto).Include(s => s.almacen.sucursal).ToListAsync();
+
+            IEnumerable<ExistenciasPorAlmacenPorProductoViewModel> existencias =  almacenProducto.Select(almp => new ExistenciasPorAlmacenPorProductoViewModel
+            {
+                ProId = almp.ProId,
+                productoDescripcion = almp.producto.ProDescripcion,
+                productoIdentificacion = almp.producto.ProIdentificacion,
+                almacen = almp.almacen.AlmDescripcion,
+                AlpStockActual = almp.AlpStockActual,
+                sucursal = almp.almacen.sucursal.SucNombre
+            });
+
+            foreach(ExistenciasPorAlmacenPorProductoViewModel existencia in existencias){
+            }
+
+
+            return almacenProducto.Select(almp => new ExistenciasPorAlmacenPorProductoViewModel
+            {
+                ProId = almp.ProId,
+                productoDescripcion = almp.producto.ProDescripcion,
+                productoIdentificacion = almp.producto.ProIdentificacion,
+                almacen = almp.almacen.AlmDescripcion,
+                AlpStockActual = almp.AlpStockActual,
+                sucursal = almp.almacen.sucursal.SucNombre
+            });
+        }
+
         // PUT: api/AlmacenesProductos/Actualizar
         [Authorize(Roles = "super")]
         [HttpPut("[action]")]
