@@ -42,12 +42,39 @@ namespace Sistema.Web.Controllers
         }
 
         // GET: api/AlmacenesProductos/Existencias
-        //[Authorize(Roles = "super,administrador,consultor")]
+        [Authorize(Roles = "super,administrador,consultor")]
         [HttpGet("[action]")]
-        public async Task<IEnumerable<ExistenciasPorAlmacenPorProductoViewModel>> Existencias()
+        public async Task<List<ExistenciasViewModel>> Existencias()
         {
-            var almacenProducto = await _context.AlmacenProductos.Include(alm => alm.almacen).Include(p => p.producto).Include(s => s.almacen.sucursal).ToListAsync();
+            //Obtenemos los productos para crear las existencias
+            var productosToListAsync = await _context.Productos.ToListAsync();
+            var productos = productosToListAsync.Select(p => new Sistema.Web.Models.Almacen.Producto.ProductoViewModel
+            {
+                ProId = p.ProId,
+                ProDescripcion = p.ProDescripcion,
+                ProCodigoBarras = p.ProCodigoBarras,
+                ProIdentificacion = p.ProIdentificacion,
+                Familia = p.Familia,
+                SubFamilia = p.SubFamilia,
+                ProPrecioGeneralIva = p.ProPrecioGeneralIva,
+                ProCostoGeneralIva = p.ProCostoGeneralIva
+            });
 
+            //Obtenemos los almacenes para crear las existencias
+            var almacenesToListAsync = await _context.Almacenes.Include(suc => suc.sucursal).ToListAsync();
+
+            var almacenes = almacenesToListAsync.Select(alm => new Sistema.Web.Models.Almacen.Almacen.AlmacenViewModel
+            {
+                AlmId = alm.AlmId,
+                AlmDescripcion = alm.AlmDescripcion,
+                AlmEstatus = alm.AlmEstatus,
+                SucId = alm.SucId,
+                sucursal = alm.sucursal.SucNombre
+            });
+
+
+            //Obtenemos las existencias de cada producto y cada almacen
+            var almacenProducto = await _context.AlmacenProductos.Include(alm => alm.almacen).Include(p => p.producto).Include(s => s.almacen.sucursal).ToListAsync();
             IEnumerable<ExistenciasPorAlmacenPorProductoViewModel> existenciasPorAlmacenPorProducto = almacenProducto.Select(almp => new ExistenciasPorAlmacenPorProductoViewModel
             {
                 ProId = almp.ProId,
@@ -60,19 +87,39 @@ namespace Sistema.Web.Controllers
 
             List<ExistenciasViewModel> existencias = new List<ExistenciasViewModel>();
 
-            foreach (ExistenciasPorAlmacenPorProductoViewModel existencia in existenciasPorAlmacenPorProducto)
+            //Se crea una existencia para cada producto
+            foreach (Sistema.Web.Models.Almacen.Producto.ProductoViewModel producto in productos)
             {
                 existencias.Add(new ExistenciasViewModel
                 {
-                    ProId = existencia.ProId,
-                    productoDescripcion = existencia.productoDescripcion,
-                    productoIdentificacion = existencia.productoIdentificacion,
-                    AlpStockActual = existencia.AlpStockActual,
-                    sucursal = existencia.sucursal
+                    ProId = producto.ProId,
+                    productoDescripcion = producto.ProDescripcion,
+                    productoIdentificacion = producto.ProIdentificacion,
+                    almacenes = new Dictionary<string, double>()
                 });
             }
 
-            return existenciasPorAlmacenPorProducto;
+            //Se agregan las sucuesales a cada existencia
+            foreach (ExistenciasViewModel existencia in existencias)
+            {
+                foreach (Sistema.Web.Models.Almacen.Almacen.AlmacenViewModel almacen in almacenes)
+                {
+                    existencia.almacenes.Add(almacen.AlmDescripcion, 0.0);
+                    existencia.sucursal = almacen.sucursal;
+                }
+            }
+
+            //Se agrega el stock de cada producto en su respectivo almacen
+            foreach (ExistenciasPorAlmacenPorProductoViewModel productoExistencia in existenciasPorAlmacenPorProducto)
+            {
+                int index = indexOfExistencia(existencias, productoExistencia.productoDescripcion);
+                if (index != -1)
+                {
+                    existencias.ElementAt(index).almacenes[productoExistencia.almacen] += productoExistencia.AlpStockActual;
+                }
+            }
+
+            return existencias;
         }
 
         // PUT: api/AlmacenesProductos/Actualizar
@@ -209,6 +256,15 @@ namespace Sistema.Web.Controllers
                 almacen = almp.almacen.AlmDescripcion,
                 producto = almp.producto.ProCodigoBarras
             });
+        }
+
+        private int indexOfExistencia(List<ExistenciasViewModel> existencias, string producto)
+        {
+            for (int i = 0; i < existencias.Count - 1; i++)
+            {
+                if (existencias.ElementAt(i).productoDescripcion.Equals(producto)) return i;
+            }
+            return -1;
         }
     }
 }
