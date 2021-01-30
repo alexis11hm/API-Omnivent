@@ -48,7 +48,7 @@ namespace Sistema.Web.Controllers
         {
             var almacenProducto = await _context.AlmacenProductos.Include(alm => alm.almacen).Include(p => p.producto).Include(s => s.almacen.sucursal).ToListAsync();
 
-            IEnumerable<ExistenciasPorAlmacenPorProductoViewModel> existencias =  almacenProducto.Select(almp => new ExistenciasPorAlmacenPorProductoViewModel
+            IEnumerable<ExistenciasPorAlmacenPorProductoViewModel> existenciasPorAlmacenPorProducto = almacenProducto.Select(almp => new ExistenciasPorAlmacenPorProductoViewModel
             {
                 ProId = almp.ProId,
                 productoDescripcion = almp.producto.ProDescripcion,
@@ -58,19 +58,21 @@ namespace Sistema.Web.Controllers
                 sucursal = almp.almacen.sucursal.SucNombre
             });
 
-            foreach(ExistenciasPorAlmacenPorProductoViewModel existencia in existencias){
+            List<ExistenciasViewModel> existencias = new List<ExistenciasViewModel>();
+
+            foreach (ExistenciasPorAlmacenPorProductoViewModel existencia in existenciasPorAlmacenPorProducto)
+            {
+                existencias.Add(new ExistenciasViewModel
+                {
+                    ProId = existencia.ProId,
+                    productoDescripcion = existencia.productoDescripcion,
+                    productoIdentificacion = existencia.productoIdentificacion,
+                    AlpStockActual = existencia.AlpStockActual,
+                    sucursal = existencia.sucursal
+                });
             }
 
-
-            return almacenProducto.Select(almp => new ExistenciasPorAlmacenPorProductoViewModel
-            {
-                ProId = almp.ProId,
-                productoDescripcion = almp.producto.ProDescripcion,
-                productoIdentificacion = almp.producto.ProIdentificacion,
-                almacen = almp.almacen.AlmDescripcion,
-                AlpStockActual = almp.AlpStockActual,
-                sucursal = almp.almacen.sucursal.SucNombre
-            });
+            return existenciasPorAlmacenPorProducto;
         }
 
         // PUT: api/AlmacenesProductos/Actualizar
