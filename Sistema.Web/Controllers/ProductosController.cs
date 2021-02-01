@@ -44,6 +44,34 @@ namespace Sistema.Web.Controllers
 
         }
 
+        // GET: api/Productos/Familias
+        [Authorize(Roles = "super,administrador,consultor")]
+        [HttpGet("[action]")]
+        public async Task<List<string>> Familias()
+        {
+            List<string> familias = new List<string>();
+            var producto = await _context.Productos.ToListAsync();
+            var productos = producto.Select(p => new ProductoViewModel
+            {
+                ProId = p.ProId,
+                ProDescripcion = p.ProDescripcion,
+                ProCodigoBarras = p.ProCodigoBarras,
+                ProIdentificacion = p.ProIdentificacion,
+                Familia = p.Familia,
+                SubFamilia = p.SubFamilia,
+                ProPrecioGeneralIva = p.ProPrecioGeneralIva,
+                ProCostoGeneralIva = p.ProCostoGeneralIva
+            });
+
+            foreach(ProductoViewModel pro in productos){
+                if(!familias.Contains(pro.Familia)){
+                    familias.Add(pro.Familia);
+                }
+            }
+
+            return familias;
+        }
+
         // GET: api/Productos/Mostrar/1
         [Authorize(Roles = "super,administrador,consultor")]
         [HttpGet("[action]/{id}")]
